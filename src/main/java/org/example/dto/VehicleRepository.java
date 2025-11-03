@@ -1,6 +1,6 @@
 package org.example.dto;
 
-import org.example.store.VehicleStore;
+import org.example.store.Store;
 
-public class VehicleRepository implements VehicleStore {
+public class VehicleRepository implements Store {
 }
