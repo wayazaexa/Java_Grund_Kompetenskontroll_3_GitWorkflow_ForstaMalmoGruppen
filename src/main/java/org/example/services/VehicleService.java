@@ -8,7 +8,6 @@ import java.util.List;
 
 public class VehicleService {
     private final VehicleStore store;
-
     public VehicleService(VehicleStore store) {
         this.store = store;
     }
