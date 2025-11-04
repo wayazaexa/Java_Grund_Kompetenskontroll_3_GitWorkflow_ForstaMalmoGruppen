@@ -1,22 +1,27 @@
 package org.example.entities;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Booking {
 
     private int id;
     private static int idGenerator;
     private Vehicle vehicle;
-    private int date;
+    private LocalDate date;
+    private LocalTime time;
     private int price;
     private String email;
     private boolean isReady;
 
-    public Booking(Vehicle vehicle, int date, int price, String email, boolean isReady) {
+    public Booking(Vehicle vehicle, LocalTime time ,LocalDate date, int price, String email, boolean isReady) {
         this.id = ++idGenerator;
         this.vehicle = vehicle;
         this.date = date;
         this.price = price;
         this.email = email;
         this.isReady = isReady;
+        this.time = time;
     }
 
     public int getId() {
@@ -31,6 +36,14 @@ public class Booking {
         return idGenerator;
     }
 
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
+    }
+
     public static void setIdGenerator(int idGenerator) {
         Booking.idGenerator = idGenerator;
     }
@@ -43,11 +56,11 @@ public class Booking {
         this.vehicle = vehicle;
     }
 
-    public int getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
