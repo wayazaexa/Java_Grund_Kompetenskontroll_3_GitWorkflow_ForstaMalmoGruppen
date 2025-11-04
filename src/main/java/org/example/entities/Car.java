@@ -7,3 +7,4 @@ public class Car extends Vehicle {
         super(regNr, model, year);
     }
 }
+
