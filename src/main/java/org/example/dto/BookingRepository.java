@@ -3,6 +3,7 @@ package org.example.dto;
 import org.example.entities.Booking;
 import org.example.entities.BookingStatus;
 import org.example.entities.Vehicle;
+import org.example.services.NotificationService;
 import org.example.store.BookingStore;
 
 import java.time.LocalDate;
@@ -16,18 +17,22 @@ public class BookingRepository implements BookingStore {
 
     private final Map<Integer, Booking> store;
 
+    private NotificationService notificationService;
+
     public BookingRepository() {
         this.store = new HashMap<>();
     }
 
     /**
      * Create a new booking:
+     *
      * @param date, check slot availability
      * @param time, check time availability
-     * @param v create booking with new ID
+     * @param v     create booking with new ID
      * @param email send confirmation email
      *
-     * */
+     *
+     */
     public Booking createBooking(LocalDate date, LocalTime time, Vehicle v, String email) {
 //       slot already taken → return null to indicate failure
         LocalDateTime slot = LocalDateTime.of(date, time);
@@ -39,13 +44,16 @@ public class BookingRepository implements BookingStore {
         int price = 0;
         var booking = new Booking(++id,
                 new Vehicle(v.getRegNr(), v.getModel(), v.getYear()),
-                time, date, price, email, BookingStatus.BOKAD);
+                time, date, price, email, BookingStatus.BOOKED);
 
         // store in memory
         store.put(id, booking);
 
         // mark time as booked
         bookedSlots.add(slot);
+
+//        send email if possible
+        notificationService.notifyBookingEvent(booking,BookingStatus.BOOKED);
 
         return booking;
     }
@@ -78,8 +86,7 @@ public class BookingRepository implements BookingStore {
             Booking tmp = store.computeIfPresent(obj.getId(), (k, v) -> obj);
             if (tmp != null) {
                 // Log Booking has been updated
-            }
-            else {
+            } else {
                 // Log error Booking not found in system and can therefore not be updated
             }
             return tmp;
@@ -93,8 +100,7 @@ public class BookingRepository implements BookingStore {
         Booking tmp = store.remove(id);
         if (tmp != null) {
             // Log Booking was removed
-        }
-        else {
+        } else {
             // Log Booking not found in system
         }
     }

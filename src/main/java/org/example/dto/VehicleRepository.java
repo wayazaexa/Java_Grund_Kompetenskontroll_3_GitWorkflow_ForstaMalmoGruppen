@@ -42,8 +42,7 @@ public class VehicleRepository implements VehicleStore {
             Vehicle tmp = store.computeIfPresent(obj.getRegNr(), (k, v) -> obj);
             if (tmp != null) {
                 // Log Vehicle has been updated
-            }
-            else {
+            } else {
                 // Log error Vehicle not found in system and can therefore not be updated
             }
             return tmp;
@@ -57,8 +56,7 @@ public class VehicleRepository implements VehicleStore {
         Vehicle tmp = store.remove(id);
         if (tmp != null) {
             // Log Vehicle was removed
-        }
-        else {
+        } else {
             // Log Vehicle not found in system
         }
     }
