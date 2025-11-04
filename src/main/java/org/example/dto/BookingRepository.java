@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BookingRepository implements Store<Booking> {
+public class BookingRepository implements Store<Booking, Integer> {
     private final Map<Integer, Booking> store;
 
     public BookingRepository() {
-        this.store = new HashMap<Integer, Booking>();
+        this.store = new HashMap<>();
     }
 
     @Override
@@ -44,7 +44,7 @@ public class BookingRepository implements Store<Booking> {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
         Booking tmp = store.remove(id);
         if (tmp != null) {
             // Log Booking was removed
