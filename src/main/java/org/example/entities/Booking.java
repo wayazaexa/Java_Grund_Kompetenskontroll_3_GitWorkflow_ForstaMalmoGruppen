@@ -12,9 +12,9 @@ public class Booking {
     private LocalTime time;
     private int price;
     private String email;
-    private boolean isReady;
+    private BookingStatus isReady;
 
-    public Booking(Vehicle vehicle, LocalTime time ,LocalDate date, int price, String email, boolean isReady) {
+    public Booking(int id, Vehicle vehicle, LocalTime time ,LocalDate date, int price, String email, BookingStatus isReady) {
         this.id = ++idGenerator;
         this.vehicle = vehicle;
         this.date = date;
@@ -80,11 +80,11 @@ public class Booking {
         this.email = email;
     }
 
-    public boolean isReady() {
+    public BookingStatus isReady() {
         return isReady;
     }
 
-    public void setReady(boolean ready) {
+    public void setReady(BookingStatus ready) {
         isReady = ready;
     }
 
