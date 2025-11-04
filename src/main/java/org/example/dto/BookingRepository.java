@@ -1,13 +1,13 @@
 package org.example.dto;
 
 import org.example.entities.Booking;
-import org.example.store.Store;
+import org.example.store.BookingStore;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BookingRepository implements Store<Booking, Integer> {
+public class BookingRepository implements BookingStore {
     private final Map<Integer, Booking> store;
 
     public BookingRepository() {
@@ -17,6 +17,15 @@ public class BookingRepository implements Store<Booking, Integer> {
     @Override
     public List<Booking> getAll() {
         return store.values().stream().toList();
+    }
+
+    @Override
+    public Booking findById(int id) {
+        Booking tmp = store.get(id);
+        if (tmp == null) {
+            // Log error Vehicle with regNr not found in the system
+        }
+        return tmp;
     }
 
     @Override
@@ -44,7 +53,7 @@ public class BookingRepository implements Store<Booking, Integer> {
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(int id) {
         Booking tmp = store.remove(id);
         if (tmp != null) {
             // Log Booking was removed

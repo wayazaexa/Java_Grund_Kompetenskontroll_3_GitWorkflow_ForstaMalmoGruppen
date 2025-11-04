@@ -1,13 +1,13 @@
 package org.example.dto;
 
 import org.example.entities.Vehicle;
-import org.example.store.Store;
+import org.example.store.VehicleStore;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class VehicleRepository implements Store<Vehicle, String> {
+public class VehicleRepository implements VehicleStore {
     private final Map<String, Vehicle> store;
 
     public VehicleRepository() {
@@ -17,6 +17,15 @@ public class VehicleRepository implements Store<Vehicle, String> {
     @Override
     public List<Vehicle> getAll() {
         return store.values().stream().toList();
+    }
+
+    @Override
+    public Vehicle findById(String regNr) {
+        Vehicle tmp = store.get(regNr);
+        if (tmp == null) {
+            // Log error Vehicle with regNr not found in the system
+        }
+        return tmp;
     }
 
     @Override
