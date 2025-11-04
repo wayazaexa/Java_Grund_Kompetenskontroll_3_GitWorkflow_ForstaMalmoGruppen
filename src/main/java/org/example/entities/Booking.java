@@ -94,6 +94,7 @@ public class Booking {
                 "id=" + id +
                 ", vehicle='" + vehicle + '\'' +
                 ", date=" + date +
+                ", time=" + time +
                 ", price=" + price +
                 ", email='" + email + '\'' +
                 ", isReady=" + isReady +
