@@ -5,8 +5,8 @@ import java.time.LocalTime;
 
 public class Booking {
 
-    private int id;
     private static int idGenerator;
+    private int id;
     private Vehicle vehicle;
     private LocalDate date;
     private LocalTime time;
@@ -14,7 +14,7 @@ public class Booking {
     private String email;
     private BookingStatus isReady;
 
-    public Booking(int id, Vehicle vehicle, LocalTime time ,LocalDate date, int price, String email, BookingStatus isReady) {
+    public Booking(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email, BookingStatus isReady) {
         this.id = ++idGenerator;
         this.vehicle = vehicle;
         this.date = date;
@@ -22,6 +22,14 @@ public class Booking {
         this.email = email;
         this.isReady = isReady;
         this.time = time;
+    }
+
+    public static int getIdGenerator() {
+        return idGenerator;
+    }
+
+    public static void setIdGenerator(int idGenerator) {
+        Booking.idGenerator = idGenerator;
     }
 
     public int getId() {
@@ -32,20 +40,12 @@ public class Booking {
         this.id = id;
     }
 
-    public static int getIdGenerator() {
-        return idGenerator;
-    }
-
     public LocalTime getTime() {
         return time;
     }
 
     public void setTime(LocalTime time) {
         this.time = time;
-    }
-
-    public static void setIdGenerator(int idGenerator) {
-        Booking.idGenerator = idGenerator;
     }
 
     public Vehicle getVehicle() {

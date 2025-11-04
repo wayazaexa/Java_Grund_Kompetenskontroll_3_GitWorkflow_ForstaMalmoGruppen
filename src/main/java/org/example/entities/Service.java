@@ -14,7 +14,7 @@ public class Service extends Booking {
     private int calculatePrice(int year) {
         if (year >= 2020) return 1500;
         else if (year >= 2015) return 1800;
-        else if  (year >= 2010) return 2000;
+        else if (year >= 2010) return 2000;
         else if (year >= 2005) return 2300;
         else return 2800;
     }

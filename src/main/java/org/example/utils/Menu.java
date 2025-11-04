@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class Menu {
     public static void printMenu(String... args) {
         int i;
-        for (i = 0; i < args.length ; i++) {
-            System.out.println(i+1 + ") " + args[i]);
+        for (i = 0; i < args.length; i++) {
+            System.out.println(i + 1 + ") " + args[i]);
         }
     }
+
     public static void main() {
         /// @param String... args take many words
         /// printMenu is static method come from Menu class, there is utils.
@@ -27,7 +28,7 @@ public class Menu {
 
                 }
 
-            }catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
