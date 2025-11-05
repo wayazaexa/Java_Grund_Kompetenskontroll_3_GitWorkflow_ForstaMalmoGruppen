@@ -2,6 +2,9 @@ package org.example.services;
 
 import org.example.entities.Booking;
 import org.example.entities.BookingStatus;
+import org.example.entities.EmailSender;
+import org.example.store.NotificationRepo;
+
 import java.util.Map;
 import java.util.function.BiFunction;
 

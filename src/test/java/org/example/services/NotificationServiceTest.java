@@ -2,6 +2,7 @@ package org.example.services;
 
 import org.example.entities.Booking;
 import org.example.entities.BookingStatus;
+import org.example.entities.EmailSender;
 import org.example.entities.Vehicle;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
