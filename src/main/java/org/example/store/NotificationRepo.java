@@ -1,4 +1,4 @@
-package org.example.services;
+package org.example.store;
 
 import org.example.entities.Booking;
 import org.example.entities.BookingStatus;

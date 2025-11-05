@@ -5,11 +5,13 @@ import java.time.LocalTime;
 
 public class Service extends Booking {
 
-    public Service(Vehicle vehicle, LocalTime time, LocalDate date, int price, String email, boolean isReady) {
-        super(vehicle, time, date, price, email, isReady);
+
+
+
+    public Service(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email, BookingStatus isReady) {
+        super(id, vehicle, time, date, price, email, isReady);
         this.setPrice(calculatePrice(vehicle.getYear()));
     }
-
 
     private int calculatePrice(int year) {
         if (year >= 2020) return 1500;

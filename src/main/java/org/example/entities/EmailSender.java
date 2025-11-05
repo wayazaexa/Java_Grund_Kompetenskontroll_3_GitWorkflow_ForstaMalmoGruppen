@@ -1,4 +1,4 @@
-package org.example.services;
+package org.example.entities;
 import jakarta.mail .*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
@@ -8,7 +8,7 @@ import java.util.Properties;
      * Simple email sender using Jakarta Mail (SMTP).
      * Holds all SMTP config and exposes one send(...) method.
      */
-    class EmailSender {
+    public class EmailSender {
         // SMTP server hostname, e.g. "smtp-relay.brevo.com"
         private final String host;
         // SMTP port, e.g. 587
@@ -23,7 +23,7 @@ import java.util.Properties;
         /**
          * Constructor that injects all SMTP settings.
          */
-        EmailSender(String host, int port, String username, String password, String from) {
+        public EmailSender(String host, int port, String username, String password, String from) {
             this.host = host;
             this.port = port;
             this.username = username;
