@@ -12,15 +12,13 @@ public class Booking {
     private LocalTime time;
     private int price;
     private String email;
-    private BookingStatus isReady;
 
-    public Booking(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email, BookingStatus isReady) {
+    public Booking(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email) {
         this.id = ++idGenerator;
         this.vehicle = vehicle;
         this.date = date;
         this.price = price;
         this.email = email;
-        this.isReady = isReady;
         this.time = time;
     }
 
@@ -80,14 +78,6 @@ public class Booking {
         this.email = email;
     }
 
-    public BookingStatus isReady() {
-        return isReady;
-    }
-
-    public void setReady(BookingStatus ready) {
-        isReady = ready;
-    }
-
     @Override
     public String toString() {
         return "Booking{" +
@@ -97,7 +87,6 @@ public class Booking {
                 ", time=" + time +
                 ", price=" + price +
                 ", email='" + email + '\'' +
-                ", isReady=" + isReady +
                 '}';
     }
 }

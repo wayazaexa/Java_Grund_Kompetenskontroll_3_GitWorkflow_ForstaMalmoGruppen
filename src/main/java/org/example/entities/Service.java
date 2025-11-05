@@ -8,8 +8,8 @@ public class Service extends Booking {
 
 
 
-    public Service(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email, BookingStatus isReady) {
-        super(id, vehicle, time, date, price, email, isReady);
+    public Service(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email) {
+        super(id, vehicle, time, date, price, email);
         this.setPrice(calculatePrice(vehicle.getYear()));
     }
 
