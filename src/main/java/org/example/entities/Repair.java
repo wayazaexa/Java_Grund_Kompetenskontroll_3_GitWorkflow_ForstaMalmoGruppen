@@ -7,10 +7,11 @@ public class Repair extends Booking {
 
     private String measure;
 
-    public Repair(Vehicle vehicle, LocalTime time, LocalDate date, int price, String email, boolean isReady, String measure) {
-        super(vehicle, time, date, price, email, isReady);
+    public Repair(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email, BookingStatus isReady, String measure) {
+        super(id, vehicle, time, date, price, email, isReady);
         this.measure = measure;
     }
+
 
     public String getMeasure() {
         return measure;

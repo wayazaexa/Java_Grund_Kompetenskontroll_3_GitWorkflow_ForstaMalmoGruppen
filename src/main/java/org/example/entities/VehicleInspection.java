@@ -5,7 +5,8 @@ import java.time.LocalTime;
 
 public class VehicleInspection extends Booking {
 
-    public VehicleInspection(Vehicle vehicle, LocalDate date, LocalTime time, String email, boolean isReady) {
-        super(vehicle, time, date, 500, email, isReady);
+
+    public VehicleInspection(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email, BookingStatus isReady) {
+        super(id, vehicle, time, date, price, email, isReady);
     }
 }
