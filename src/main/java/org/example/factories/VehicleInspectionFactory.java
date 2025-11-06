@@ -5,7 +5,7 @@ import org.example.entities.VehicleInspection;
 
 import java.time.LocalDate;
 
-public class VehicleInspectionFactory {
+public class VehicleInspectionFactory extends BookingFactory {
     public VehicleInspection createInspection(Vehicle vehicle, LocalDate date, String email) {
         try {
             return new VehicleInspection(vehicle, date, email);
