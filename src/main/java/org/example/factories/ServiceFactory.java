@@ -6,7 +6,7 @@ import org.example.entities.Vehicle;
 
 import java.time.LocalDate;
 
-public class ServiceFactory {
+public class ServiceFactory extends BookingFactory {
     public Service createService(Vehicle vehicle, LocalDate date, String email) {
         try {
             return new Service(vehicle, date, email);
