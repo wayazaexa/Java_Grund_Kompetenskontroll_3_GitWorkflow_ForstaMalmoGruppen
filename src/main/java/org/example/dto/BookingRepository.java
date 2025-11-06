@@ -1,8 +1,6 @@
 package org.example.dto;
 
 import org.example.entities.Booking;
-import org.example.entities.BookingStatus;
-import org.example.entities.Vehicle;
 import org.example.services.NotificationService;
 import org.example.store.BookingStore;
 import org.slf4j.Logger;
@@ -26,40 +24,6 @@ public class BookingRepository implements BookingStore {
         this.store = new HashMap<>();
     }
 
-    /**
-     * Create a new booking:
-     *
-     * @param date, check slot availability
-     * @param time, check time availability
-     * @param v     create booking with new ID
-     * @param email send confirmation email
-     *
-     *
-     */
-    public Booking createBooking(LocalDate date, LocalTime time, Vehicle v, String email) {
-//       slot already taken → return null to indicate failure
-        LocalDateTime slot = LocalDateTime.of(date, time);
-        if (bookedSlots.contains(slot)) {
-            return null;
-        }
-        // generate unique ID
-        int id = 1;
-        int price = 0;
-        var booking = new Booking(++id,
-                new Vehicle(v.getRegNr(), v.getModel(), v.getYear()),
-                time, date, price, email, BookingStatus.BOOKED);
-
-        // store in memory
-        store.put(id, booking);
-
-        // mark time as booked
-        bookedSlots.add(slot);
-
-//        send email if possible
-        notificationService.notifyBookingEvent(booking,BookingStatus.BOOKED);
-
-        return booking;
-    }
 
     @Override
     public List<Booking> getAll() {
