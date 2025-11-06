@@ -23,7 +23,7 @@ public class Vehicle {
         }
         this.model = model;
 
-        if (year < 1950 || year > LocalDate.now().getYear()) {
+        if (year < 1850 || year > LocalDate.now().getYear()) {
             throw new InvalidVehicleYearException("Invalid vehicle manufacturing year");
         }
         this.year = year;

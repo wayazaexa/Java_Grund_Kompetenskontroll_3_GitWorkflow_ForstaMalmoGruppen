@@ -1,5 +1,7 @@
 package org.example.entities;
 
+import org.example.exceptions.InvalidVehicleException;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -14,6 +16,9 @@ public class Booking {
     private BookingStatus isReady;
 
     public Booking(Vehicle vehicle, LocalDate date, String email) {
+        if (vehicle == null) {
+            throw new InvalidVehicleException("Vehicle was not created correctly");
+        }
         this.vehicle = vehicle;
         this.date = date;
         this.email = email;

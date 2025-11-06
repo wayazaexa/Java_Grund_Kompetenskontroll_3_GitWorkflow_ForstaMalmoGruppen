@@ -1,42 +1,18 @@
 package org.example;
 
-import org.example.entities.Booking;
-import org.example.entities.BookingStatus;
-import org.example.entities.EmailSender;
-import org.example.entities.Vehicle;
 import org.example.services.BookingService;
-import org.example.services.NotificationService;
+import org.example.services.MockEmailService;
+import org.example.store.BookingStore;
+import org.example.store.NotificationRepo;
+import org.example.utils.Menu;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
+import static org.example.services.InitializationService.init;
 
 public class App {
     public static void main(String[] args) {
-
-    NotificationService notificationService = getNotificationService();
-//    notificationService.notifyBookingEvent(new Booking(1, new Vehicle("eer44", "bmw",2000),
-//            LocalTime.now(), LocalDate.now(), 500, "david.refai@hotmail.com", BookingStatus.BOOKED), BookingStatus.BOOKED);
-//        System.out.println("Email sent successfully");
+        BookingStore store = init();
+        NotificationRepo notificationService = new MockEmailService();
+        BookingService service = new BookingService(store, notificationService);
+        new Menu(service).run();
     }
-
-//    private static NotificationService getNotificationService() {
-
-//        Properties props = new Properties();
-//        try (FileInputStream fis = new FileInputStream("local.properties")) {
-//            props.load(fis);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//        String host = props.getProperty("SMTP_HOST");
-//        int port = Integer.parseInt(props.getProperty("SMTP_PORT"));
-//        String user = props.getProperty("SMTP_USER");
-//        String pass = props.getProperty("SMTP_PASS");
-//        String from = props.getProperty("SMTP_FROM");
-
-//        EmailSender sender = new EmailSender(host, port, user, pass, from);
-
-
-//        return new NotificationService(sender);
-//    }
 }
