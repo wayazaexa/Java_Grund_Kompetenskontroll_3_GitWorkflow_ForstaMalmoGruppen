@@ -3,9 +3,19 @@ package org.example.dto;
 import org.example.entities.Booking;
 import org.example.services.NotificationService;
 import org.example.store.BookingStore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 
 public class BookingRepository implements BookingStore {
+    private final Logger log = LoggerFactory.getLogger(BookingRepository.class);
+    // Holds all already-booked time slots (date + time) so we can quickly check availability
+    private final Set<LocalDateTime> bookedSlots = new HashSet<>();
+
     private final Map<Integer, Booking> store;
 
     private NotificationService notificationService;
@@ -24,7 +34,7 @@ public class BookingRepository implements BookingStore {
     public Booking findById(int id) {
         Booking tmp = store.get(id);
         if (tmp == null) {
-            // Log error Vehicle with regNr not found in the system
+            log.warn("Booking with id: {} not found in the system", id);
         }
         return tmp;
     }
@@ -33,7 +43,7 @@ public class BookingRepository implements BookingStore {
     public void add(Booking obj) {
         if (obj != null) {
             store.put(obj.getId(), obj);
-            // Log Booking has been added
+            log.info("Booking has been added");
         }
     }
 
@@ -42,13 +52,14 @@ public class BookingRepository implements BookingStore {
         if (obj != null) {
             Booking tmp = store.computeIfPresent(obj.getId(), (k, v) -> obj);
             if (tmp != null) {
-                // Log Booking has been updated
-            } else {
-                // Log error Booking not found in system and can therefore not be updated
+                log.info("Booking has been updated");
+            }
+            else {
+                log.error("Booking not found in system and can therefore not be updated");
             }
             return tmp;
         }
-        // Log error Booking is null (unless we log this somewhere else)
+        log.error("Booking is null"); // unless we log this somewhere else
         return null;
     }
 
@@ -56,9 +67,10 @@ public class BookingRepository implements BookingStore {
     public void delete(int id) {
         Booking tmp = store.remove(id);
         if (tmp != null) {
-            // Log Booking was removed
-        } else {
-            // Log Booking not found in system
+            log.info("Booking with id: {} was removed", tmp.getId());
+        }
+        else {
+            log.warn("Booking with id: {} not found in system", id);
         }
     }
 }
