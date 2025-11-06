@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 
 public class BookingRepository implements BookingStore {
-    private final Logger log = LoggerFactory.getLogger(BookingRepository.class);
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     private final Map<Integer, Booking> store;
 
