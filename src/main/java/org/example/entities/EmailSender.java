@@ -23,7 +23,7 @@ import java.util.Properties;
         /**
          * Constructor that injects all SMTP settings.
          */
-        EmailSender(String host, int port, String username, String password, String from) {
+        public EmailSender(String host, int port, String username, String password, String from) {
             this.host = host;
             this.port = port;
             this.username = username;

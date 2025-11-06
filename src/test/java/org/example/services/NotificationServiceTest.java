@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -51,7 +50,7 @@ public class NotificationServiceTest {
 
         assertEquals("user@test.com", toCap.getValue());
         assertEquals("Booking created – Reg.nr ABC123", subCap.getValue());
-        assertEquals("Your booking is created for 2025-11-06", bodyCap.getValue());
+        assertEquals("Your booking is booked for 2025-11-06", bodyCap.getValue());
     }
 
     @Test
