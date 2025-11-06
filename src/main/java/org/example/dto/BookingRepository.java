@@ -6,15 +6,10 @@ import org.example.store.BookingStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.*;
 
 public class BookingRepository implements BookingStore {
     private final Logger log = LoggerFactory.getLogger(BookingRepository.class);
-    // Holds all already-booked time slots (date + time) so we can quickly check availability
-    private final Set<LocalDateTime> bookedSlots = new HashSet<>();
 
     private final Map<Integer, Booking> store;
 
