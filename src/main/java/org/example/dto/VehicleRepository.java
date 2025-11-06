@@ -2,12 +2,16 @@ package org.example.dto;
 
 import org.example.entities.Vehicle;
 import org.example.store.VehicleStore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class VehicleRepository implements VehicleStore {
+    private final Logger log = LoggerFactory.getLogger(VehicleRepository.class);
+
     private final Map<String, Vehicle> store;
 
     public VehicleRepository() {
@@ -23,7 +27,7 @@ public class VehicleRepository implements VehicleStore {
     public Vehicle findById(String regNr) {
         Vehicle tmp = store.get(regNr);
         if (tmp == null) {
-            // Log error Vehicle with regNr not found in the system
+            log.warn("Vehicle with registration plate: {} not found in the system", regNr);
         }
         return tmp;
     }
@@ -32,7 +36,7 @@ public class VehicleRepository implements VehicleStore {
     public void add(Vehicle obj) {
         if (obj != null) {
             store.put(obj.getRegNr(), obj);
-            // Log Vehicle has been added
+            log.info("Vehicle has been added");
         }
     }
 
@@ -41,13 +45,13 @@ public class VehicleRepository implements VehicleStore {
         if (obj != null) {
             Vehicle tmp = store.computeIfPresent(obj.getRegNr(), (k, v) -> obj);
             if (tmp != null) {
-                // Log Vehicle has been updated
+                log.info("Vehicle has been updated");
             } else {
-                // Log error Vehicle not found in system and can therefore not be updated
+                log.error("Vehicle not found in system and can therefore not be updated");
             }
             return tmp;
         }
-        // Log error Vehicle is null (unless we log this somewhere else)
+        log.error("Vehicle is null"); // unless we log this somewhere else
         return null;
     }
 
@@ -55,9 +59,9 @@ public class VehicleRepository implements VehicleStore {
     public void delete(String id) {
         Vehicle tmp = store.remove(id);
         if (tmp != null) {
-            // Log Vehicle was removed
+            log.info("Vehicle with registration plate: {} was removed", tmp.getRegNr());
         } else {
-            // Log Vehicle not found in system
+            log.warn("Vehicle with registration plate: {} not found in system", id);
         }
     }
 }
