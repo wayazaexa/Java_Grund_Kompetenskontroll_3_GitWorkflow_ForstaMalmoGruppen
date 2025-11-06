@@ -12,6 +12,7 @@ public class Repair extends Booking {
         this.measure = measure;
     }
 
+
     public String getMeasure() {
         return measure;
     }

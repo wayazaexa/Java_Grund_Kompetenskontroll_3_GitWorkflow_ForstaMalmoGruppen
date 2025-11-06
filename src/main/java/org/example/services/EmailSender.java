@@ -8,7 +8,7 @@ import java.util.Properties;
      * Simple email sender using Jakarta Mail (SMTP).
      * Holds all SMTP config and exposes one send(...) method.
      */
-    class EmailSender {
+    public class EmailSender {
         // SMTP server hostname, e.g. "smtp-relay.brevo.com"
         private final String host;
         // SMTP port, e.g. 587
