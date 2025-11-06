@@ -31,7 +31,7 @@ public class NotificationService implements NotificationRepo {
                             // email subject
                             "Booking created – Reg.nr " + booking.getVehicle().getRegNr(),
                             // email body (with date and time on separate line)
-                            "Your booking is created for " + booking.getDate() + "\nTid: " + booking.getTime()
+                            "Your booking is created for " + booking.getDate()
                     ),
                     // When a booking is cancelled
                     BookingStatus.CANCELLED, (booking, st) -> new NotificationMessage(

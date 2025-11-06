@@ -29,13 +29,9 @@ public class NotificationServiceTest {
         // arrange
         Vehicle vehicle = new Vehicle("ABC123", "Volvo XC60", 2020);
         Booking booking = new Booking(
-                1,
                 vehicle,
-                LocalTime.of(10, 30),
                 LocalDate.of(2025, 11, 6),
-                1200,
-                "user@test.com",
-                BookingStatus.BOOKED
+                "user@test.com"
         );
 
         // act
@@ -54,7 +50,7 @@ public class NotificationServiceTest {
 
         assertEquals("user@test.com", toCap.getValue());
         assertEquals("Booking created – Reg.nr ABC123", subCap.getValue());
-        assertEquals("Your booking is created for 2025-11-06\nTid: 10:30", bodyCap.getValue());
+        assertEquals("Your booking is created for 2025-11-06", bodyCap.getValue());
     }
 
     @Test
@@ -62,14 +58,11 @@ public class NotificationServiceTest {
         // arrange
         Vehicle vehicle = new Vehicle("XYZ999", "VW Golf", 2018);
         Booking booking = new Booking(
-                2,
                 vehicle,
-                LocalTime.of(9, 0),
                 LocalDate.of(2025, 11, 6),
-                900,
-                "u@ex.com",
-                BookingStatus.CANCELLED
+                "u@ex.com"
         );
+        booking.setReady(BookingStatus.CANCELLED);
 
         // act
         service.notifyBookingEvent(booking, BookingStatus.CANCELLED);
@@ -95,14 +88,11 @@ public class NotificationServiceTest {
         // arrange
         Vehicle vehicle = new Vehicle("ZZZ777", "Tesla", 2024);
         Booking booking = new Booking(
-                3,
                 vehicle,
-                LocalTime.of(8, 0),
                 LocalDate.of(2025, 11, 6),
-                1500,
-                "no@ex.com",
-                BookingStatus.DONE
+                "no@ex.com"
         );
+        booking.setReady(BookingStatus.DONE);
 
         // act
         service.notifyBookingEvent(booking, null);
