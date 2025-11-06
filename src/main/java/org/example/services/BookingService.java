@@ -1,62 +1,66 @@
 package org.example.services;
 
-import org.example.dto.BookingRepository;
 import org.example.entities.Booking;
 import org.example.entities.BookingStatus;
+import org.example.entities.BookingType;
 import org.example.entities.Vehicle;
+import org.example.factories.BookingFactory;
+import org.example.factories.RepairFactory;
+import org.example.factories.ServiceFactory;
+import org.example.factories.VehicleInspectionFactory;
+import org.example.store.BookingStore;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 public class BookingService {
-
-    private final BookingRepository bookingRepository;
+    private final BookingStore bookingStore;
     private final NotificationService notificationService;
-    private final Set<LocalDateTime> bookedSlots = new HashSet<>();
-    private int bookingSeq = 0;
 
-    public BookingService(BookingRepository bookingRepository,
-                          NotificationService notificationService) {
-        this.bookingRepository = bookingRepository;
+    public BookingService(BookingStore bookingStore, NotificationService notificationService) {
+        this.bookingStore = bookingStore;
         this.notificationService = notificationService;
     }
 
-    public Booking createBooking(LocalDate date, LocalTime time, Vehicle v, String email) {
-        // build slot
-        LocalDateTime slot = LocalDateTime.of(date, time);
+    public List<Booking> getAll() {
+        return bookingStore.getAll();
+    }
 
-        // slot already taken → return null to indicate failure
-        if (bookedSlots.contains(slot)) {
-            return null;
-        }
+    public Booking findById(int id) {
+        return bookingStore.findById(id);
+    }
 
-        int price = 0; // TODO: calculate price
+    public Booking createBooking(BookingType bookingType, Vehicle vehicle, LocalDate date, String email) {
+        BookingFactory factory = switch (bookingType) {
+            case INSPECTION -> new VehicleInspectionFactory();
+            case SERVICE -> new ServiceFactory();
+            case REPAIR -> new RepairFactory();
+        };
+        var booking = factory.createBooking(vehicle, date, email);
 
-        // generate unique ID (simple in-memory)
-        int id = ++bookingSeq;
-
-        Booking booking = new Booking(
-                id,
-                v,
-                time,
-                date,
-                price,
-                email,
-                BookingStatus.BOOKED
-        );
-
-        // store in repository
-        bookingRepository.add(booking);
-
-        // mark slot as taken
-        bookedSlots.add(slot);
+        // store in memory
+        bookingStore.add(booking);
 
         // send notification
         notificationService.notifyBookingEvent(booking, BookingStatus.BOOKED);
 
         return booking;
+    }
+
+    public void add(BookingType bookingType, Vehicle vehicle, LocalDate date, String email) {
+        BookingFactory factory = switch (bookingType) {
+            case INSPECTION -> new VehicleInspectionFactory();
+            case SERVICE -> new ServiceFactory();
+            case REPAIR -> new RepairFactory();
+        };
+        bookingStore.add(factory.createBooking(vehicle, date, email));
+    }
+
+    public Booking update(Booking booking) {
+        return bookingStore.update(booking);
+    }
+
+    public void delete(int id) {
+        bookingStore.delete(id);
     }
 }

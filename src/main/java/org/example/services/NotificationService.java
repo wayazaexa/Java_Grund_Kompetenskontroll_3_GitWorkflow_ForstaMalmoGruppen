@@ -5,10 +5,7 @@ import org.example.entities.BookingStatus;
 import org.example.entities.EmailSender;
 import org.example.store.NotificationRepo;
 
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Map;
-import java.util.Properties;
 import java.util.function.BiFunction;
 
 /**
@@ -37,7 +34,7 @@ public class NotificationService implements NotificationRepo {
                             // email subject
                             "Booking created – Reg.nr " + booking.getVehicle().getRegNr(),
                             // email body (with date and time on separate line)
-                            "Your booking is booked for " + booking.getDate() + "\nTid: " + booking.getTime()
+                            "Your booking is booked for " + booking.getDate()
                     ),
                     // When a booking is cancelled
                     BookingStatus.CANCELLED, (booking, st) -> new NotificationMessage(

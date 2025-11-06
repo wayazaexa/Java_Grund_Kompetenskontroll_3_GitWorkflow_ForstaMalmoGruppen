@@ -5,8 +5,14 @@ import java.time.LocalTime;
 
 public class VehicleInspection extends Booking {
 
+    public VehicleInspection(Vehicle vehicle, LocalDate date, String email) {
+        super(vehicle, date, email);
+        this.setPrice(500);
+    }
 
-    public VehicleInspection(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email) {
-        super(id, vehicle, time, date, price, email);
+    @Override
+    public String toString() {
+        return "VehicleInspection " +
+                "{" + super.toString() + " }";
     }
 }

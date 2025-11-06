@@ -9,17 +9,15 @@ public class Booking {
     private int id;
     private Vehicle vehicle;
     private LocalDate date;
-    private LocalTime time;
     private int price;
     private String email;
 
-    public Booking(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email) {
-        this.id = ++idGenerator;
+    public Booking(Vehicle vehicle, LocalDate date, String email) {
         this.vehicle = vehicle;
         this.date = date;
-        this.price = price;
         this.email = email;
-        this.time = time;
+        this.isReady = BookingStatus.BOOKED;
+        this.id = ++idGenerator;
     }
 
     public static int getIdGenerator() {
@@ -38,13 +36,6 @@ public class Booking {
         this.id = id;
     }
 
-    public LocalTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalTime time) {
-        this.time = time;
-    }
 
     public Vehicle getVehicle() {
         return vehicle;
@@ -80,13 +71,11 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "Booking{" +
-                "id=" + id +
+        return "id=" + id +
                 ", vehicle='" + vehicle + '\'' +
                 ", date=" + date +
-                ", time=" + time +
                 ", price=" + price +
                 ", email='" + email + '\'' +
-                '}';
+                ", isReady=" + isReady;
     }
 }

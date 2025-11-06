@@ -7,11 +7,10 @@ public class Repair extends Booking {
 
     private String measure;
 
-    public Repair(int id, Vehicle vehicle, LocalTime time, LocalDate date, int price, String email, String measure) {
-        super(id, vehicle, time, date, price, email);
+    public Repair(Vehicle vehicle, LocalDate date, String email, String measure) {
+        super(vehicle,date, email);
         this.measure = measure;
     }
-
 
     public String getMeasure() {
         return measure;
@@ -24,6 +23,7 @@ public class Repair extends Booking {
     @Override
     public String toString() {
         return "Repair{" +
+                super.toString() +
                 "measure='" + measure + '\'' +
                 '}';
     }
