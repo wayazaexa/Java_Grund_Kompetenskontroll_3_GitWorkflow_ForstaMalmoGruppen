@@ -41,8 +41,8 @@ public class BookingService {
         // store in memory
         bookingStore.add(booking);
 
-//        send email if possible
-        notificationService.notifyBookingEvent(booking,BookingStatus.BOOKED);
+        // send notification
+        notificationService.notifyBookingEvent(booking, BookingStatus.BOOKED);
 
         return booking;
     }
