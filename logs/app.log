@@ -13,6 +13,12 @@
 2025-11-07 14:25:52.136 [main] INFO  [BookingRepository.java:41] - Booking has been added
 2025-11-07 14:25:52.136 [main] INFO  [BookingRepository.java:41] - Booking has been added
 2025-11-07 14:25:52.136 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 14:42:25.737 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 14:42:25.739 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 14:42:25.739 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 14:42:25.739 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 14:42:25.739 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 14:42:25.739 [main] INFO  [BookingRepository.java:41] - Booking has been added
 2025-11-07 14:59:24.221 [main] INFO  [BookingRepository.java:41] - Booking has been added
 2025-11-07 14:59:24.223 [main] INFO  [BookingRepository.java:41] - Booking has been added
 2025-11-07 14:59:24.223 [main] INFO  [BookingRepository.java:41] - Booking has been added
@@ -63,3 +69,24 @@
 2025-11-07 15:09:48.757 [main] INFO  [BookingRepository.java:41] - Booking has been added
 2025-11-07 15:09:48.757 [main] INFO  [BookingRepository.java:41] - Booking has been added
 2025-11-07 15:09:48.757 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:10.734 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:10.736 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:10.736 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:10.736 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:10.736 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:10.736 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:39.118 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:39.121 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:39.121 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:39.121 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:39.121 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:39.121 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:45:58.835 [main] INFO  [BookingRepository.java:65] - Booking with id: 1 was removed
+2025-11-07 15:46:33.088 [main] WARN  [BookingRepository.java:68] - Booking with id: 7 not found in system
+2025-11-07 15:48:25.240 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:48:25.242 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:48:25.242 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:48:25.242 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:48:25.242 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:48:25.242 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 15:49:02.369 [main] INFO  [BookingRepository.java:65] - Booking with id: 1 was removed

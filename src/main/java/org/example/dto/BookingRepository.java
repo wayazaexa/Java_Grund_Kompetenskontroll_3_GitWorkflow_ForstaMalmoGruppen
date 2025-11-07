@@ -59,7 +59,7 @@ public class BookingRepository implements BookingStore {
     }
 
     @Override
-    public void delete(int id) {
+    public Booking delete(int id) {
         Booking tmp = store.remove(id);
         if (tmp != null) {
             log.info("Booking with id: {} was removed", tmp.getId());
@@ -67,5 +67,6 @@ public class BookingRepository implements BookingStore {
         else {
             log.warn("Booking with id: {} not found in system", id);
         }
+        return tmp;
     }
 }

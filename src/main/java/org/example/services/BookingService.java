@@ -59,7 +59,7 @@ public class BookingService {
         return bookingStore.update(booking);
     }
 
-    public void delete(int id) {
-        bookingStore.delete(id);
+    public Booking delete(int id) {
+        return bookingStore.delete(id);
     }
 }
