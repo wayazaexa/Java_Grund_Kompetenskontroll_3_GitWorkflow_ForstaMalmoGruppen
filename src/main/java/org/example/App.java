@@ -14,7 +14,7 @@ import java.util.Properties;
 public class App {
     public static void main(String[] args) {
 
-    NotificationService notificationService = getNotificationService();
+//    NotificationService notificationService = getNotificationService();
 //    notificationService.notifyBookingEvent(new Booking(1, new Vehicle("eer44", "bmw",2000),
 //            LocalTime.now(), LocalDate.now(), 500, "david.refai@hotmail.com", BookingStatus.BOOKED), BookingStatus.BOOKED);
 //        System.out.println("Email sent successfully");
