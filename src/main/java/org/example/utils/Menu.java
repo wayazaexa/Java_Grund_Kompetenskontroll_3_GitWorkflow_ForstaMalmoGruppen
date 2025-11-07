@@ -150,6 +150,31 @@ public class Menu {
     private void showBookings() {
         System.out.println("Show all bookings");
         service.getAll().forEach(Booking::printShortInfo);
+
+        printMenu("Sort by id", "Sort by date", "Sort by status", "Return to main menu");
+        while (true) {
+            System.out.print("Enter your choice: ");
+            String choice = scanner.nextLine().trim();
+            switch (choice) {
+                case "1" -> sortById();
+                case "2" -> sortByDate();
+                case "3" -> sortByStatus();
+                case "4" -> { return; }
+                default -> System.out.println("Invalid choice");
+            }
+        }
+    }
+
+    private void sortById() {
+        System.out.println("sort id");
+    }
+
+    private void sortByDate() {
+        System.out.println("sort date");
+    }
+
+    private void sortByStatus() {
+        System.out.println("sort status");
     }
 
     private void showBookingDetails() {
