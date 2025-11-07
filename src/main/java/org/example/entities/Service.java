@@ -1,7 +1,6 @@
 package org.example.entities;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class Service extends Booking {
 
@@ -20,7 +19,7 @@ public class Service extends Booking {
 
     @Override
     public String toString() {
-        return "Service " +
-                "{" + super.toString() + " }";
+        return "Service - " +
+                super.toString();
     }
 }

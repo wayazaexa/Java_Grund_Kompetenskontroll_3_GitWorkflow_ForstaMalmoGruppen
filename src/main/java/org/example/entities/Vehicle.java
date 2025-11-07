@@ -55,11 +55,9 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return "Vehicle{" +
-                "regNr ='" + regNr + '\'' +
-                ", model ='" + model + '\'' +
-                ", year =" + year +
-                '}';
+        return "Registration plate: '" + regNr + '\'' +
+                ", model: '" + model + '\'' +
+                ", year: " + year;
     }
 
 }

@@ -29,11 +29,6 @@ public class Booking {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
     public Vehicle getVehicle() {
         return vehicle;
     }
@@ -80,11 +75,11 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "id=" + id +
-                ", vehicle='" + vehicle + '\'' +
-                ", date=" + date +
-                ", price=" + price +
-                ", email='" + email + '\'' +
-                ", isReady=" + status;
+        return "id: " + id +
+                ", vehicle: [ " + vehicle + " ]" +
+                ", date: " + date +
+                ", price: " + price +
+                ", email: '" + email + '\'' +
+                ", status: " + status;
     }
 }
