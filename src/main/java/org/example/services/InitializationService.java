@@ -8,10 +8,14 @@ import org.example.factories.ServiceFactory;
 import org.example.factories.VehicleFactory;
 import org.example.factories.VehicleInspectionFactory;
 import org.example.store.BookingStore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 
 public class InitializationService {
+    private static final Logger log = LoggerFactory.getLogger(InitializationService.class);
+
     public static BookingStore init() {
         BookingStore store = new BookingRepository();
         VehicleInspectionFactory vehicleInspectionFactory = new VehicleInspectionFactory();
@@ -19,6 +23,7 @@ public class InitializationService {
         VehicleFactory vehicleFactory = new VehicleFactory();
         ServiceFactory serviceFactory = new ServiceFactory();
 
+        log.info("Populating store");
         Booking tmp = vehicleInspectionFactory.createBooking(
                 vehicleFactory.createVehicle("ABC123", "VW Golf", 2005),
                 LocalDate.of(2025, 12, 6),

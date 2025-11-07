@@ -1,5 +1,6 @@
 package org.example.utils;
 
+import ch.qos.logback.core.encoder.JsonEscapeUtil;
 import org.example.entities.*;
 import org.example.factories.*;
 import org.example.services.BookingService;
@@ -10,7 +11,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Menu {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
@@ -180,38 +184,54 @@ public class Menu {
         service.getAll().forEach(Booking::printShortInfo);
 
         while (true) {
-            printMenu("Sort by id", "Sort by date", "Sort by status", "Return to main menu");
+            printMenu("Sort by id", "Sort by date", "Sort by status", "Sort by type", "Return to main menu");
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine().trim();
             switch (choice) {
                 case "1" -> sortById();
                 case "2" -> sortByDate();
                 case "3" -> sortByStatus();
-                case "4" -> { return; }
+                case "4" -> sortByType();
+                case "5" -> { return; }
                 default -> System.out.println("Invalid choice");
             }
         }
     }
 
     private void sortById() {
-        System.out.println("Bookings sorted by id");
+        System.out.println("\nBookings sorted by id");
         service.getAll().stream()
                 .sorted(Comparator.comparing(Booking::getId))
                 .forEach(Booking::printShortInfo);
+        log.info("Bookings was sorted by id");
     }
 
     private void sortByDate() {
-        System.out.println("Bookings sorted by date");
+        System.out.println("\nBookings sorted by date");
         service.getAll().stream()
                 .sorted(Comparator.comparing(Booking::getDate))
                 .forEach(Booking::printShortInfo);
+        log.info("Bookings was sorted by date");
     }
 
     private void sortByStatus() {
-        System.out.println("Bookings sorted by status");
+        System.out.println("\nBookings sorted by status");
         service.getAll().stream()
                 .sorted(Comparator.comparing(Booking::getStatus))
                 .forEach(Booking::printShortInfo);
+        log.info("Bookings was sorted by status");
+    }
+
+    private void sortByType() {
+        System.out.println("\nBookings sorted by type");
+        Map<Class<? extends Booking>, List<Booking>> groupedBySubclass =
+                service.getAll().stream()
+                        .collect(Collectors.groupingBy(Booking::getClass));
+        groupedBySubclass.forEach((c, l) -> {
+            System.out.println("\nBooking type: " + c.getSimpleName());
+            l.forEach(Booking::printShortInfo);
+        });
+        log.info("Bookings was sorted by type");
     }
 
     private void showBookingDetails() {
