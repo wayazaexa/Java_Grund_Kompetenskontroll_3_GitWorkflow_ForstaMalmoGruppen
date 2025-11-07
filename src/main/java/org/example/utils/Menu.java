@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Menu {
@@ -166,15 +167,24 @@ public class Menu {
     }
 
     private void sortById() {
-        System.out.println("sort id");
+        System.out.println("Bookings sorted by id");
+        service.getAll().stream()
+                .sorted(Comparator.comparing(Booking::getId))
+                .forEach(Booking::printShortInfo);
     }
 
     private void sortByDate() {
-        System.out.println("sort date");
+        System.out.println("Bookings sorted by date");
+        service.getAll().stream()
+                .sorted(Comparator.comparing(Booking::getDate))
+                .forEach(Booking::printShortInfo);
     }
 
     private void sortByStatus() {
-        System.out.println("sort status");
+        System.out.println("Bookings sorted by status");
+        service.getAll().stream()
+                .sorted(Comparator.comparing(Booking::getStatus))
+                .forEach(Booking::printShortInfo);
     }
 
     private void showBookingDetails() {
