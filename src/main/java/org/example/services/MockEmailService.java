@@ -11,6 +11,6 @@ public class MockEmailService implements NotificationRepo {
 
     @Override
     public void notifyBookingEvent(Booking booking, BookingStatus status) {
-        log.info("E-mail has been sent to customer. To: {} E-mail body: The status of your booking is now {}", booking.getEmail(), booking.isReady());
+        log.info("E-mail has been sent to customer. To: {} E-mail body: The status of your booking is now {}", booking.getEmail(), booking.getStatus());
     }
 }
