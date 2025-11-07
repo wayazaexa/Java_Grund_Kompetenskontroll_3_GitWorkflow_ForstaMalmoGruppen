@@ -4,6 +4,7 @@ import org.example.exceptions.InvalidVehicleException;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Booking {
 
@@ -71,7 +72,10 @@ public class Booking {
     }
 
     public void printShortInfo() {
-        System.out.println("Booking - id: " + id + ", date: " + date + ", status: " + status);
+        String ios = String.valueOf(date);
+        LocalDateTime dt = LocalDateTime.parse(ios);
+        DateTimeFormatter nice = DateTimeFormatter.ofPattern("EEEE d MMMM yyyy 'kl.' HH:mm");
+        System.out.println("Booking - id: " + id + "RegNr: " + vehicle.getRegNr() + ", date: " + dt.format(nice) + " , status: " + status);
     }
 
     @Override

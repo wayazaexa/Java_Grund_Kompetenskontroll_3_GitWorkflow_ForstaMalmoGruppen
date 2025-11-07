@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.*;
@@ -77,7 +78,6 @@ public class Menu {
             System.out.println("Ogiltig e-post.");
             return;
         }
-        System.out.println(date);
 
         service.createBooking(bookingType, vehicle, date, email);
     }
@@ -179,17 +179,7 @@ public class Menu {
             }
             LocalTime chosenTime = availableTimes.get(tch - 1);
 
-//            // car.nr
-//            System.out.print("Ange bilnummer (t.ex. ABC123): ");
-//            String car = scanner.nextLine().toUpperCase().trim();
-//            if (!validateRegistrationPlate(car)) {
-//                System.out.println("Ogiltigt bilnummer.");
-//            }
-//            if (service.existsCarNumber(car)){
-//                System.out.println("denna reg:nr har redan en bokning! ");
-//            }
-            LocalDateTime dateTime = LocalDateTime.of(chosenDate, chosenTime);
-            return dateTime;
+        return LocalDateTime.of(chosenDate, chosenTime);
 
     }
 
@@ -204,20 +194,23 @@ public class Menu {
         return v;
     }
 
-    int handleIntInput(String text) {
-        String userInput;
-        int number;
+    // use this for vehicle year
+    int handleYearInput(String text) {
+        int currentYear = Year.now().getValue();
         while (true) {
             System.out.print(text);
-            userInput = scanner.nextLine().trim();
+            String userInput = scanner.nextLine().trim();
+
             try {
-                number = Integer.parseInt(userInput);
-                break;
+                int year = Integer.parseInt(userInput);
+                if (year >= 1950 && year <= currentYear) {
+                    return year;
+                }
+                System.out.println("Year must be between 1950 and " + currentYear);
             } catch (NumberFormatException e) {
-                System.out.println(userInput + " is not a number");
+                System.out.println(userInput + " is not a valid year, try again.");
             }
         }
-        return number;
     }
 
     private void updateBooking() {

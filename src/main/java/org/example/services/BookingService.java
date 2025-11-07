@@ -39,6 +39,7 @@ public class BookingService {
             case SERVICE -> new ServiceFactory();
             case REPAIR -> new RepairFactory();
         };
+
         var booking = factory.createBooking(new Vehicle(v.getRegNr(), v.getModel(), v.getYear()), date, email);
 
 

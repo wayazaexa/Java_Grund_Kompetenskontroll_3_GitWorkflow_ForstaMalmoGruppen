@@ -420,3 +420,58 @@
 2025-11-07 20:51:49.750 [main] INFO  [BookingRepository.java:41] - Booking has been added
 2025-11-07 20:52:54.273 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
 2025-11-07 20:52:54.275 [main] ERROR [Menu.java:133] - Vehicle could NOT be created with EWE332, 32ew3, 3232
+2025-11-07 20:56:40.746 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 20:56:40.753 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:56:40.755 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:56:40.756 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:56:40.756 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:56:40.756 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:56:40.756 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:56:40.756 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:57:12.340 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:57:12.340 [main] INFO  [MockEmailService.java:19] - E-mail has been sent to customer. To: w@w.com E-mail body: The status of your booking is now BOOKED
+2025-11-07 20:57:21.288 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 21:20:21.142 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 21:20:21.150 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 21:20:21.158 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:20:21.158 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:20:21.158 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:20:21.158 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:20:21.158 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:20:21.158 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:20:25.770 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 21:20:30.175 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 21:20:30.178 [main] INFO  [Menu.java:272] - Bookings was sorted by id
+2025-11-07 21:21:11.103 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:21:11.104 [main] INFO  [MockEmailService.java:19] - E-mail has been sent to customer. To: tyt@v.vom E-mail body: The status of your booking is now BOOKED
+2025-11-07 21:24:35.089 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 21:24:35.105 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 21:24:35.112 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:24:35.112 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:24:35.112 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:24:35.113 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:24:35.113 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:24:35.113 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:25:00.894 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:25:00.896 [main] INFO  [MockEmailService.java:19] - E-mail has been sent to customer. To: w@w.com E-mail body: The status of your booking is now BOOKED
+2025-11-07 21:25:38.859 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 21:26:47.732 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 21:26:47.750 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 21:26:47.756 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:26:47.756 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:26:47.756 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:26:47.757 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:26:47.757 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:26:47.757 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:27:06.770 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:27:06.770 [main] INFO  [MockEmailService.java:19] - E-mail has been sent to customer. To: sw@.sw E-mail body: The status of your booking is now BOOKED
+2025-11-07 21:27:12.297 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 21:28:20.363 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 21:28:20.374 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 21:28:20.376 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:28:20.376 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:28:20.376 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:28:20.377 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:28:20.377 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:28:20.377 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 21:29:05.321 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
