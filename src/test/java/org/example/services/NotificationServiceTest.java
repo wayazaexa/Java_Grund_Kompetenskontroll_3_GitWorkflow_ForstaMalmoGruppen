@@ -62,7 +62,7 @@ public class NotificationServiceTest {
                 LocalDate.of(2025, 11, 6),
                 "u@ex.com"
         );
-        booking.setReady(BookingStatus.CANCELLED);
+        booking.setStatus(BookingStatus.CANCELLED);
 
         // act
         service.notifyBookingEvent(booking, BookingStatus.CANCELLED);
@@ -92,7 +92,7 @@ public class NotificationServiceTest {
                 LocalDate.of(2025, 11, 6),
                 "no@ex.com"
         );
-        booking.setReady(BookingStatus.DONE);
+        booking.setStatus(BookingStatus.DONE);
 
         // act
         service.notifyBookingEvent(booking, null);
