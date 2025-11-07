@@ -46,17 +46,17 @@ public class BookingService {
         notificationService.notifyBookingEvent(booking, BookingStatus.BOOKED);
     }
 
-    public void add(BookingType bookingType, Vehicle vehicle, LocalDate date, String email) {
-        BookingFactory factory = switch (bookingType) {
-            case INSPECTION -> new VehicleInspectionFactory();
-            case SERVICE -> new ServiceFactory();
-            case REPAIR -> new RepairFactory();
-        };
-        bookingStore.add(factory.createBooking(vehicle, date, email));
-    }
+    public void update(Booking booking) {
+        Booking tmp = bookingStore.update(booking);
+        if (tmp == null) {
+            System.out.println("Booking could not be updated");
+        }
+        else {
+            System.out.println("Booking with id " + tmp.getId() + " was updated");
 
-    public Booking update(Booking booking) {
-        return bookingStore.update(booking);
+            // send notification
+            notificationService.notifyBookingEvent(booking, BookingStatus.DONE);
+        }
     }
 
     public Booking delete(int id) {

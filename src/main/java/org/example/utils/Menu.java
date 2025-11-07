@@ -1,8 +1,6 @@
 package org.example.utils;
 
-import org.example.entities.Booking;
-import org.example.entities.BookingType;
-import org.example.entities.Vehicle;
+import org.example.entities.*;
 import org.example.factories.*;
 import org.example.services.BookingService;
 import org.slf4j.Logger;
@@ -36,16 +34,17 @@ public class Menu {
         /// printMenu is static method come from Menu class, there is utils.
         while (true) {
             try {
-                printMenu("Create booking", "Update booking", "Remove booking", "Show bookings", "Show booking details", "Close app");
+                printMenu("Create booking", "Update booking", "Remove booking", "Confirm booking as done", "Show bookings", "Show booking details", "Close app");
                 System.out.print("Enter your choice: ");
                 var choice = scanner.nextLine().trim();
                 switch (choice) {
                     case "1" -> createBooking();
                     case "2" -> updateBooking();
                     case "3" -> deleteBooking();
-                    case "4" -> showBookings();
-                    case "5" -> showBookingDetails();
-                    case "6" -> { return; }
+                    case "4" -> markBookingAsDone();
+                    case "5" -> showBookings();
+                    case "6" -> showBookingDetails();
+                    case "7" -> { return; }
                     default -> System.out.println("Invalid choice");
                 }
 
@@ -148,6 +147,7 @@ public class Menu {
         System.out.println("\nBookings:");
         service.getAll().forEach(Booking::printShortInfo);
         int choice = handleIntInput("Enter id of the booking you want to delete: ");
+
         Booking tmp = service.delete(choice);
         if (tmp == null) {
             System.out.println("\nBooking was not found in the system");
@@ -156,6 +156,24 @@ public class Menu {
         }
     }
 
+    private void markBookingAsDone() {
+        System.out.println("\nBookings:");
+        service.getAll().forEach(Booking::printShortInfo);
+        int choice = handleIntInput("Enter id of the booking that's done: ");
+
+        Booking tmp = service.findById(choice);
+        if (tmp == null) {
+            System.out.println("\nBooking was not found in the system");
+        } else {
+            tmp.setStatus(BookingStatus.DONE);
+            if (tmp instanceof Repair) {
+                int cost = handleIntInput("Enter how much this repair costs: ");
+                tmp.setPrice(cost);
+            }
+            service.update(tmp);
+            System.out.println("\nBooking with id " + choice + " has been marked as done.");
+        }
+    }
 
     private void showBookings() {
         System.out.println("\nShow all bookings");
@@ -200,6 +218,7 @@ public class Menu {
         System.out.println("\nBookings:");
         service.getAll().forEach(Booking::printShortInfo);
         int choice = handleIntInput("Enter id of the booking you want to see details of: ");
+
         Booking tmp = service.findById(choice);
         if (tmp == null) {
             System.out.println("Booking was not found in the system");
@@ -208,6 +227,4 @@ public class Menu {
             System.out.println(tmp);
         }
     }
-
-
 }

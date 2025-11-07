@@ -90,3 +90,65 @@
 2025-11-07 15:48:25.242 [main] INFO  [BookingRepository.java:41] - Booking has been added
 2025-11-07 15:48:25.242 [main] INFO  [BookingRepository.java:41] - Booking has been added
 2025-11-07 15:49:02.369 [main] INFO  [BookingRepository.java:65] - Booking with id: 1 was removed
+2025-11-07 16:05:42.451 [main] INFO  [BookingRepository.java:45] - Booking has been added
+2025-11-07 16:05:42.453 [main] INFO  [BookingRepository.java:45] - Booking has been added
+2025-11-07 16:05:42.453 [main] INFO  [BookingRepository.java:45] - Booking has been added
+2025-11-07 16:05:42.453 [main] INFO  [BookingRepository.java:45] - Booking has been added
+2025-11-07 16:05:42.453 [main] INFO  [BookingRepository.java:45] - Booking has been added
+2025-11-07 16:05:42.453 [main] INFO  [BookingRepository.java:45] - Booking has been added
+2025-11-07 16:05:46.374 [main] INFO  [BookingRepository.java:25] - Returned a list of all current bookings
+2025-11-07 16:05:53.008 [main] INFO  [BookingRepository.java:36] - Found booking with id: 5
+2025-11-07 16:05:53.010 [main] INFO  [BookingRepository.java:54] - Booking has been updated
+2025-11-07 16:05:57.636 [main] INFO  [BookingRepository.java:25] - Returned a list of all current bookings
+2025-11-07 16:28:17.093 [main] INFO  [BookingRepository.java:44] - Booking has been added
+2025-11-07 16:28:17.095 [main] INFO  [BookingRepository.java:44] - Booking has been added
+2025-11-07 16:28:17.095 [main] INFO  [BookingRepository.java:44] - Booking has been added
+2025-11-07 16:28:17.095 [main] INFO  [BookingRepository.java:44] - Booking has been added
+2025-11-07 16:28:17.095 [main] INFO  [BookingRepository.java:44] - Booking has been added
+2025-11-07 16:28:17.095 [main] INFO  [BookingRepository.java:44] - Booking has been added
+2025-11-07 16:28:23.269 [main] INFO  [BookingRepository.java:24] - Returned a list of all current bookings
+2025-11-07 16:28:27.168 [main] INFO  [BookingRepository.java:35] - Found booking with id: 6
+2025-11-07 16:28:27.170 [main] INFO  [BookingRepository.java:53] - Booking has been updated
+2025-11-07 16:28:27.172 [main] INFO  [MockEmailService.java:14] - E-mail has been sent to customer. To: omar.omarsson@icloud.com E-mail body: The status of your booking is now DONE
+2025-11-07 16:29:19.490 [main] INFO  [BookingRepository.java:44] - Booking has been added
+2025-11-07 16:29:19.490 [main] INFO  [MockEmailService.java:14] - E-mail has been sent to customer. To: dummy@gmail.com E-mail body: The status of your booking is now BOOKED
+2025-11-07 16:49:56.070 [main] INFO  [BookingRepository.java:24] - Returned a list of all current bookings
+2025-11-07 16:50:01.272 [main] INFO  [BookingRepository.java:35] - Found booking with id: 3
+2025-11-07 16:50:01.273 [main] INFO  [BookingRepository.java:53] - Booking has been updated
+2025-11-07 16:50:01.273 [main] INFO  [MockEmailService.java:14] - E-mail has been sent to customer. To: pelle@mail.com E-mail body: The status of your booking is now DONE
+2025-11-07 16:50:15.182 [main] INFO  [BookingRepository.java:24] - Returned a list of all current bookings
+2025-11-07 16:50:21.687 [main] INFO  [BookingRepository.java:70] - Booking with id: 6 was removed
+2025-11-07 16:52:03.371 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:52:03.372 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:52:03.372 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:52:03.372 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:52:03.372 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:52:03.372 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:52:14.321 [main] INFO  [BookingRepository.java:22] - Returned a list of all current bookings
+2025-11-07 16:52:16.643 [main] WARN  [BookingRepository.java:30] - Booking with id: 42 not found in the system
+2025-11-07 16:57:11.293 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:57:11.294 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:57:11.294 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:57:11.294 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:57:11.294 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:57:11.294 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 16:57:15.697 [main] INFO  [BookingRepository.java:22] - Returned a list of all current bookings
+2025-11-07 16:57:18.297 [main] INFO  [BookingRepository.java:33] - Found booking with id: 3
+2025-11-07 16:57:26.300 [main] INFO  [BookingRepository.java:22] - Returned a list of all current bookings
+2025-11-07 16:57:27.413 [main] INFO  [BookingRepository.java:33] - Found booking with id: 4
+2025-11-07 16:57:30.641 [main] INFO  [BookingRepository.java:22] - Returned a list of all current bookings
+2025-11-07 16:57:31.515 [main] INFO  [BookingRepository.java:33] - Found booking with id: 5
+2025-11-07 16:57:39.235 [main] INFO  [BookingRepository.java:22] - Returned a list of all current bookings
+2025-11-07 16:57:41.065 [main] INFO  [BookingRepository.java:33] - Found booking with id: 5
+2025-11-07 16:57:46.232 [main] INFO  [BookingRepository.java:51] - Booking has been updated
+2025-11-07 16:57:46.233 [main] INFO  [MockEmailService.java:14] - E-mail has been sent to customer. To: axel.axelsson@yahoo.se E-mail body: The status of your booking is now DONE
+2025-11-07 17:00:31.371 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 17:00:31.373 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 17:00:31.373 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 17:00:31.373 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 17:00:31.373 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 17:00:31.373 [main] INFO  [BookingRepository.java:42] - Booking has been added
+2025-11-07 17:00:37.698 [main] INFO  [BookingRepository.java:22] - Returned a list of all current bookings
+2025-11-07 17:00:39.004 [main] INFO  [BookingRepository.java:33] - Found booking with id: 5
+2025-11-07 17:00:43.425 [main] INFO  [BookingRepository.java:51] - Booking has been updated
+2025-11-07 17:00:43.426 [main] INFO  [MockEmailService.java:16] - E-mail has been sent to customer. To: axel.axelsson@yahoo.se E-mail body: The status of your booking is now DONE, and the total cost is 4200
