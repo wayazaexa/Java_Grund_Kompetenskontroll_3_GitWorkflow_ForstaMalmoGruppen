@@ -1,9 +1,6 @@
 package org.example.services;
 
-import org.example.entities.Booking;
-import org.example.entities.BookingStatus;
-import org.example.entities.BookingType;
-import org.example.entities.Vehicle;
+import org.example.entities.*;
 import org.example.factories.BookingFactory;
 import org.example.factories.RepairFactory;
 import org.example.factories.ServiceFactory;
@@ -32,12 +29,22 @@ public class BookingService {
     }
 
     public void createBooking(BookingType bookingType, Vehicle vehicle, LocalDate date, String email) {
-        BookingFactory factory = switch (bookingType) {
-            case INSPECTION -> new VehicleInspectionFactory();
-            case SERVICE -> new ServiceFactory();
-            case REPAIR -> new RepairFactory();
-        };
+        BookingFactory factory = (bookingType.equals(BookingType.INSPECTION) ?
+                new VehicleInspectionFactory() : new ServiceFactory());
+
         var booking = factory.createBooking(vehicle, date, email);
+
+        // store in memory
+        bookingStore.add(booking);
+
+        // send notification
+        notificationService.notifyBookingEvent(booking, BookingStatus.BOOKED);
+    }
+
+    public void createRepair(Vehicle vehicle, LocalDate date, String email, String measure) {
+        BookingFactory factory =  new RepairFactory();
+
+        var booking = factory.createBooking(vehicle, date, email, measure);
 
         // store in memory
         bookingStore.add(booking);

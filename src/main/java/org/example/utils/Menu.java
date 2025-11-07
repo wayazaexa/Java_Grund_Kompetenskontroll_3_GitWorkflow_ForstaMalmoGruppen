@@ -1,6 +1,5 @@
 package org.example.utils;
 
-import ch.qos.logback.core.encoder.JsonEscapeUtil;
 import org.example.entities.*;
 import org.example.factories.*;
 import org.example.services.BookingService;
@@ -63,9 +62,24 @@ public class Menu {
         BookingType bookingType = inputBookingType();
         Vehicle vehicle = inputVehicle();
         LocalDate date = inputDate();
-        System.out.print("Enter customer's e-mail address: ");
-        String email = scanner.nextLine().trim();
-        service.createBooking(bookingType, vehicle, date, email);
+        String email;
+        String measure;
+        do {
+            System.out.print("Enter customer's e-mail address: ");
+            email = scanner.nextLine().trim();
+        } while (!validateEmail(email));
+        if (bookingType.equals(BookingType.REPAIR)) {
+            System.out.println("Enter what measure needs to be done during this repair: ");
+            measure = scanner.nextLine().trim();
+            service.createRepair(vehicle, date, email, measure);
+        }
+        else {
+            service.createBooking(bookingType, vehicle, date, email);
+        }
+    }
+
+    private boolean validateEmail(String email) {
+        return true;
     }
 
     private BookingType inputBookingType() {
