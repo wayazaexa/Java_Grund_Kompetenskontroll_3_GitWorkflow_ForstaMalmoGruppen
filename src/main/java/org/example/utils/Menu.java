@@ -149,11 +149,11 @@ public class Menu {
     }
 
     private void showBookings() {
-        System.out.println("Show all bookings");
+        System.out.println("\nShow all bookings");
         service.getAll().forEach(Booking::printShortInfo);
 
-        printMenu("Sort by id", "Sort by date", "Sort by status", "Return to main menu");
         while (true) {
+            printMenu("Sort by id", "Sort by date", "Sort by status", "Return to main menu");
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine().trim();
             switch (choice) {
@@ -188,6 +188,15 @@ public class Menu {
     }
 
     private void showBookingDetails() {
-        System.out.println("Show booking details");
+        System.out.println("\nBookings:");
+        service.getAll().forEach(Booking::printShortInfo);
+        int choice = handleIntInput("Enter id of the booking you want to see details of: ");
+        Booking tmp = service.findById(choice);
+        if (tmp == null) {
+            System.out.println("Booking was not found in the system");
+        }
+        else {
+            System.out.println(tmp);
+        }
     }
 }
