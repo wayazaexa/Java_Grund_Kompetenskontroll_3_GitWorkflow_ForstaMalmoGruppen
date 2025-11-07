@@ -26,33 +26,33 @@ public class InitializationService {
         log.info("Populating store");
         Booking tmp = vehicleInspectionFactory.createBooking(
                 vehicleFactory.createVehicle("ABC123", "VW Golf", 2005),
-                LocalDate.of(2025, 12, 6),
+                LocalDate.of(2025, 12, 6).atStartOfDay(),
                 "kalle@mail.com");
         tmp.setStatus(BookingStatus.CANCELLED);
         store.add(tmp);
 
         store.add(vehicleInspectionFactory.createBooking(
                 vehicleFactory.createVehicle("DEF456", "Toyota Corolla", 1991),
-                LocalDate.of(2025, 1, 5),
+                LocalDate.of(2025, 1, 5).atStartOfDay(),
                 "jocke@mail.com"));
         store.add(vehicleInspectionFactory.createBooking(
                 vehicleFactory.createVehicle("GHI78J", "Volvo 142", 1972),
-                LocalDate.of(2025,6 , 8),
+                LocalDate.of(2025,6 , 8).atStartOfDay(),
                 "pelle@mail.com"));
         tmp = serviceFactory.createBooking(
                 vehicleFactory.createVehicle("HFR21F", "Toyota Rav4", 2022),
-                LocalDate.of(2026,12, 2),
+                LocalDate.of(2026,12, 2).atStartOfDay(),
                 "david.davido@gmail.com");
         tmp.setStatus(BookingStatus.CONFIRMED);
         store.add(tmp);
         store.add(repairFactory.createBooking(
                 vehicleFactory.createVehicle("BBL669", "Primavera", 2020),
-                LocalDate.of(2025, 12, 18),
+                LocalDate.of(2025, 12, 18).atStartOfDay(),
                 "axel.axelsson@yahoo.se",
                 "Oil change"));
         tmp = repairFactory.createBooking(
                 vehicleFactory.createVehicle("LOL001", "Bugatti", 2011),
-                LocalDate.of(2026,1,1),
+                LocalDate.of(2026,1,1).atStartOfDay(),
                 "omar.omarsson@icloud.com",
                 "Engine swap");
         tmp.setStatus(BookingStatus.CANCELLED);

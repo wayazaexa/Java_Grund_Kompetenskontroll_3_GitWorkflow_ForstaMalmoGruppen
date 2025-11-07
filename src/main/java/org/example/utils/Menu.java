@@ -8,12 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Menu {
@@ -24,6 +24,14 @@ public class Menu {
     public Menu(BookingService service) {
         this.service = service;
     }
+    List<LocalTime> dailySlots = List.of(
+            LocalTime.of(9, 0),
+            LocalTime.of(10, 0),
+            LocalTime.of(11, 0),
+            LocalTime.of(13, 0),
+            LocalTime.of(14, 0),
+            LocalTime.of(15, 0)
+    );
 
     public static void printMenu(String... args) {
         System.out.println();
@@ -62,10 +70,21 @@ public class Menu {
         System.out.println("CreateBooking");
         BookingType bookingType = inputBookingType();
         Vehicle vehicle = inputVehicle();
-        LocalDate date = inputDate();
+        LocalDateTime date = inputDate();
         System.out.print("Enter customer's e-mail address: ");
         String email = scanner.nextLine().trim();
+        if (!isValidEmail(email)) {
+            System.out.println("Ogiltig e-post.");
+            return;
+        }
+        System.out.println(date);
+
         service.createBooking(bookingType, vehicle, date, email);
+    }
+
+    private boolean isValidEmail(String email) {
+            String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+            return Pattern.matches(regex, email);
     }
 
     private BookingType inputBookingType() {
@@ -112,19 +131,77 @@ public class Menu {
     }
 
     private boolean validateRegistrationPlate(String regNr) {
-        return true;
+            String regex1 = "^[A-Za-zÅÄÖåäö]{3}[0-9]{3}$";       // ABC123
+            String regex2 = "^[A-Za-zÅÄÖåäö]{3}[0-9]{2}[A-Za-zÅÄÖåäö]$"; // ABC12A
+            return Pattern.matches(regex1, regNr) || Pattern.matches(regex2, regNr);
+
     }
 
-    private LocalDate inputDate() {
-        System.out.println("Enter date the customer should hand in their vehicle (format YYMMDD): ");
-        while (true) {
-            try {
-                return LocalDate.parse(scanner.nextLine().trim(), DateTimeFormatter.ofPattern("yyMMdd"));
-            } catch (DateTimeParseException ex) {
-                System.out.println("Invalid date format");
-                System.out.print("Enter date (format YYMMDD): ");
+    private LocalDateTime inputDate() {
+//        System.out.println("Enter date the customer should hand in their vehicle (format YYMMDD): ");
+        Scanner scanner = new Scanner(System.in);
+
+            List<LocalDate> availableDays = new ArrayList<>();
+            for (int i = 0; i < 3; i++) {
+                availableDays.add(LocalDate.now().plusDays(i));
+
             }
+            System.out.println("Välj datum:");
+            for (int i = 0; i < availableDays.size(); i++) {
+                System.out.println((i + 1) + ") " + availableDays.get(i));
+
+            }
+            int dch = safeInt(scanner);
+            if (dch < 1 || dch > availableDays.size()) {
+                System.out.println("Ogiltigt datum.");
+            }
+            LocalDate chosenDate = availableDays.get(dch - 1);
+
+            // tid
+            List<LocalTime> availableTimes = new ArrayList<>();
+            for (LocalTime t : dailySlots) {
+                if (t != null) {
+                    availableTimes.add(t);
+                }
+            }
+            if (availableTimes.isEmpty()) {
+                System.out.println("Inga tider lediga detta datum.");
+
+            }
+            System.out.println("Lediga tider:");
+            for (int i = 0; i < availableTimes.size(); i++) {
+                System.out.println((i + 1) + ") " + availableTimes.get(i));
+            }
+            int tch = safeInt(scanner);
+            if (tch < 1 || tch > availableTimes.size()) {
+                System.out.println("Ogiltig tid.");
+
+            }
+            LocalTime chosenTime = availableTimes.get(tch - 1);
+
+//            // car.nr
+//            System.out.print("Ange bilnummer (t.ex. ABC123): ");
+//            String car = scanner.nextLine().toUpperCase().trim();
+//            if (!validateRegistrationPlate(car)) {
+//                System.out.println("Ogiltigt bilnummer.");
+//            }
+//            if (service.existsCarNumber(car)){
+//                System.out.println("denna reg:nr har redan en bokning! ");
+//            }
+            LocalDateTime dateTime = LocalDateTime.of(chosenDate, chosenTime);
+            return dateTime;
+
+    }
+
+
+    private static int safeInt(Scanner sc) {
+        while (!sc.hasNextInt()) {
+            sc.nextLine();
+            System.out.print("Skriv ett heltal: ");
         }
+        int v = sc.nextInt();
+        sc.nextLine();
+        return v;
     }
 
     int handleIntInput(String text) {

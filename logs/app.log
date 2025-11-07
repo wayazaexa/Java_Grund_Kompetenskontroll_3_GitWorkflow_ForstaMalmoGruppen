@@ -245,3 +245,178 @@
 2025-11-07 17:45:00.049 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
 2025-11-07 17:45:00.051 [main] INFO  [Menu.java:234] - Bookings was sorted by type
 2025-11-07 17:45:21.027 [main] INFO  [App.java:22] - Exiting app
+2025-11-07 19:07:04.323 [main] INFO  [App.java:17] - Booking app started
+2025-11-07 19:07:04.333 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 19:07:04.334 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:07:04.335 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:07:04.335 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:07:04.335 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:07:04.335 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:07:04.335 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:07:26.622 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 19:08:13.010 [main] WARN  [ServiceFactory.java:19] - Vehicle was not created correctly
+2025-11-07 19:08:22.509 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 19:08:32.914 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 19:08:32.918 [main] INFO  [Menu.java:214] - Bookings was sorted by date
+2025-11-07 19:11:39.997 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 19:11:48.919 [main] INFO  [BookingRepository.java:67] - Booking with id: 1 was removed
+2025-11-07 19:11:57.938 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 19:12:11.014 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 19:12:17.663 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 19:12:23.847 [main] INFO  [BookingRepository.java:32] - Found booking with id: 2
+2025-11-07 19:44:11.637 [main] INFO  [App.java:17] - Booking app started
+2025-11-07 19:44:11.645 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 19:44:11.656 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:44:11.657 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:44:11.657 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:44:11.657 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:44:11.657 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:44:11.657 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:44:55.594 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 19:51:36.247 [main] INFO  [App.java:17] - Booking app started
+2025-11-07 19:51:36.255 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 19:51:36.257 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:51:36.257 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:51:36.257 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:51:36.257 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:51:36.257 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:51:36.257 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:52:04.504 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 19:53:35.002 [main] INFO  [App.java:17] - Booking app started
+2025-11-07 19:53:35.016 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 19:53:35.018 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:53:35.018 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:53:35.018 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:53:35.018 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:53:35.018 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:53:35.018 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 19:53:47.816 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 20:12:26.270 [main] INFO  [App.java:17] - Booking app started
+2025-11-07 20:12:26.292 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:12:26.295 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:12:26.295 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:12:26.295 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:12:26.295 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:12:26.295 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:12:26.295 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:12:43.005 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 20:14:26.486 [main] INFO  [App.java:17] - Booking app started
+2025-11-07 20:14:26.494 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:14:26.496 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:14:26.496 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:14:26.496 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:14:26.496 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:14:26.497 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:14:26.497 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:14:47.458 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 20:15:50.948 [main] INFO  [App.java:17] - Booking app started
+2025-11-07 20:15:51.000 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:15:51.022 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:15:51.023 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:15:51.023 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:15:51.023 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:15:51.023 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:15:51.024 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:16:19.378 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 20:16:34.370 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 20:17:46.234 [main] WARN  [ServiceFactory.java:19] - Vehicle was not created correctly
+2025-11-07 20:22:22.261 [main] INFO  [App.java:17] - Booking app started
+2025-11-07 20:22:22.267 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:22:22.270 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:22:22.270 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:22:22.270 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:22:22.270 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:24:37.820 [main] INFO  [App.java:17] - Booking app started
+2025-11-07 20:24:37.828 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:24:37.832 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:24:37.832 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:24:37.832 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:24:37.832 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:24:37.833 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:24:37.833 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:24:56.724 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 20:25:03.188 [main] WARN  [ServiceFactory.java:20] - Vehicle was not created correctly
+2025-11-07 20:26:49.766 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 20:26:49.774 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:26:49.776 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:26:49.776 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:26:49.777 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:26:49.777 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:26:49.777 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:26:49.777 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:27:05.351 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 20:27:15.844 [main] WARN  [ServiceFactory.java:20] - Vehicle was not created correctly
+2025-11-07 20:35:54.991 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 20:35:54.999 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:35:55.001 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:35:55.001 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:35:55.001 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:35:55.001 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:35:55.001 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:35:55.001 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:36:23.747 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 20:40:24.748 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 20:40:24.801 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:40:24.804 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:24.804 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:24.804 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:24.804 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:24.804 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:24.805 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:55.270 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 20:40:55.280 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:40:55.308 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:55.309 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:55.309 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:55.309 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:55.309 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:40:55.309 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:41:46.883 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 20:41:51.932 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-07 20:41:51.936 [main] INFO  [Menu.java:285] - Bookings was sorted by id
+2025-11-07 20:44:00.053 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 20:44:00.085 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:44:00.091 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:00.091 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:00.091 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:00.091 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:00.091 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:00.092 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:24.740 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 20:44:24.800 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:44:24.816 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:24.816 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:24.816 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:24.816 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:24.816 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:24.816 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:49.440 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 20:44:49.447 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:44:49.450 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:49.450 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:49.450 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:49.450 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:49.450 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:44:49.450 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:45:02.508 [main] INFO  [Menu.java:125] - Could not create vehicle with reg. plate DED333, model 323, and year 3232
+2025-11-07 20:45:02.512 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 20:46:09.264 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 20:46:09.278 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:46:09.293 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:46:09.294 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:46:09.294 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:46:09.294 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:46:09.294 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:46:09.294 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:46:24.293 [main] INFO  [Menu.java:126] - Could not create vehicle with reg. plate DED323, model 32de, and year 2323
+2025-11-07 20:46:24.296 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 20:51:49.729 [main] INFO  [App.java:18] - Booking app started
+2025-11-07 20:51:49.746 [main] INFO  [InitializationService.java:26] - Populating store
+2025-11-07 20:51:49.749 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:51:49.749 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:51:49.749 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:51:49.750 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:51:49.750 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:51:49.750 [main] INFO  [BookingRepository.java:41] - Booking has been added
+2025-11-07 20:52:54.273 [main] WARN  [VehicleFactory.java:14] - Invalid vehicle manufacturing year
+2025-11-07 20:52:54.275 [main] ERROR [Menu.java:133] - Vehicle could NOT be created with EWE332, 32ew3, 3232

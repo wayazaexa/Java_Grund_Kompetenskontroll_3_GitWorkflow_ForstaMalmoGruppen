@@ -3,18 +3,19 @@ package org.example.entities;
 import org.example.exceptions.InvalidVehicleException;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Booking {
 
     private static int idGenerator;
     private int id;
     private Vehicle vehicle;
-    private LocalDate date;
+    private LocalDateTime date;
     private int price;
     private String email;
     private BookingStatus status;
 
-    public Booking(Vehicle vehicle, LocalDate date, String email) {
+    public Booking(Vehicle vehicle, LocalDateTime date, String email) {
         if (vehicle == null) {
             throw new InvalidVehicleException("Vehicle was not created correctly");
         }
@@ -37,11 +38,11 @@ public class Booking {
         this.vehicle = vehicle;
     }
 
-    public LocalDate getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
