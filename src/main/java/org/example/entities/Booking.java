@@ -1,7 +1,8 @@
 package org.example.entities;
 
+import org.example.exceptions.InvalidVehicleException;
+
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class Booking {
 
@@ -11,32 +12,22 @@ public class Booking {
     private LocalDate date;
     private int price;
     private String email;
-    private BookingStatus isReady;
+    private BookingStatus status;
 
     public Booking(Vehicle vehicle, LocalDate date, String email) {
+        if (vehicle == null) {
+            throw new InvalidVehicleException("Vehicle was not created correctly");
+        }
         this.vehicle = vehicle;
         this.date = date;
         this.email = email;
-        this.isReady = BookingStatus.BOOKED;
+        this.status = BookingStatus.BOOKED;
         this.id = ++idGenerator;
-    }
-
-    public static int getIdGenerator() {
-        return idGenerator;
-    }
-
-    public static void setIdGenerator(int idGenerator) {
-        Booking.idGenerator = idGenerator;
     }
 
     public int getId() {
         return id;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
 
     public Vehicle getVehicle() {
         return vehicle;
@@ -70,21 +61,25 @@ public class Booking {
         this.email = email;
     }
 
-    public BookingStatus isReady() {
-        return isReady;
+    public BookingStatus getStatus() {
+        return status;
     }
 
-    public void setReady(BookingStatus ready) {
-        isReady = ready;
+    public void setStatus(BookingStatus status) {
+        this.status = status;
+    }
+
+    public void printShortInfo() {
+        System.out.println("Booking - id: " + id + ", date: " + date + ", status: " + status);
     }
 
     @Override
     public String toString() {
-        return "id=" + id +
-                ", vehicle='" + vehicle + '\'' +
-                ", date=" + date +
-                ", price=" + price +
-                ", email='" + email + '\'' +
-                ", isReady=" + isReady;
+        return "id: " + id +
+                ", vehicle: [ " + vehicle + " ]" +
+                ", date: " + date +
+                ", price: " + price +
+                ", email: '" + email + '\'' +
+                ", status: " + status;
     }
 }

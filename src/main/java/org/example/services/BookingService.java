@@ -9,15 +9,16 @@ import org.example.factories.RepairFactory;
 import org.example.factories.ServiceFactory;
 import org.example.factories.VehicleInspectionFactory;
 import org.example.store.BookingStore;
+import org.example.store.NotificationRepo;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public class BookingService {
     private final BookingStore bookingStore;
-    private final NotificationService notificationService;
+    private final NotificationRepo notificationService;
 
-    public BookingService(BookingStore bookingStore, NotificationService notificationService) {
+    public BookingService(BookingStore bookingStore, NotificationRepo notificationService) {
         this.bookingStore = bookingStore;
         this.notificationService = notificationService;
     }
@@ -30,7 +31,7 @@ public class BookingService {
         return bookingStore.findById(id);
     }
 
-    public Booking createBooking(BookingType bookingType, Vehicle vehicle, LocalDate date, String email) {
+    public void createBooking(BookingType bookingType, Vehicle vehicle, LocalDate date, String email) {
         BookingFactory factory = switch (bookingType) {
             case INSPECTION -> new VehicleInspectionFactory();
             case SERVICE -> new ServiceFactory();
@@ -43,24 +44,22 @@ public class BookingService {
 
         // send notification
         notificationService.notifyBookingEvent(booking, BookingStatus.BOOKED);
-
-        return booking;
     }
 
-    public void add(BookingType bookingType, Vehicle vehicle, LocalDate date, String email) {
-        BookingFactory factory = switch (bookingType) {
-            case INSPECTION -> new VehicleInspectionFactory();
-            case SERVICE -> new ServiceFactory();
-            case REPAIR -> new RepairFactory();
-        };
-        bookingStore.add(factory.createBooking(vehicle, date, email));
+    public void update(Booking booking) {
+        Booking tmp = bookingStore.update(booking);
+        if (tmp == null) {
+            System.out.println("Booking could not be updated");
+        }
+        else {
+            System.out.println("Booking with id " + tmp.getId() + " was updated");
+
+            // send notification
+            notificationService.notifyBookingEvent(booking, BookingStatus.DONE);
+        }
     }
 
-    public Booking update(Booking booking) {
-        return bookingStore.update(booking);
-    }
-
-    public void delete(int id) {
-        bookingStore.delete(id);
+    public Booking delete(int id) {
+        return bookingStore.delete(id);
     }
 }

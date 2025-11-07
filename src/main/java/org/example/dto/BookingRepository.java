@@ -1,7 +1,6 @@
 package org.example.dto;
 
 import org.example.entities.Booking;
-import org.example.services.NotificationService;
 import org.example.store.BookingStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,19 +8,17 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 
 public class BookingRepository implements BookingStore {
-    private final Logger log = LoggerFactory.getLogger(BookingRepository.class);
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     private final Map<Integer, Booking> store;
-
-    private NotificationService notificationService;
 
     public BookingRepository() {
         this.store = new HashMap<>();
     }
 
-
     @Override
     public List<Booking> getAll() {
+        log.info("Returned a list of all current bookings");
         return store.values().stream().toList();
     }
 
@@ -31,21 +28,24 @@ public class BookingRepository implements BookingStore {
         if (tmp == null) {
             log.warn("Booking with id: {} not found in the system", id);
         }
+        else {
+            log.info("Found booking with id: {}", id);
+        }
         return tmp;
     }
 
     @Override
-    public void add(Booking obj) {
-        if (obj != null) {
-            store.put(obj.getId(), obj);
+    public void add(Booking booking) {
+        if (booking != null) {
+            store.put(booking.getId(), booking);
             log.info("Booking has been added");
         }
     }
 
     @Override
-    public Booking update(Booking obj) {
-        if (obj != null) {
-            Booking tmp = store.computeIfPresent(obj.getId(), (k, v) -> obj);
+    public Booking update(Booking booking) {
+        if (booking != null) {
+            Booking tmp = store.computeIfPresent(booking.getId(), (k, v) -> booking);
             if (tmp != null) {
                 log.info("Booking has been updated");
             }
@@ -54,12 +54,14 @@ public class BookingRepository implements BookingStore {
             }
             return tmp;
         }
-        log.error("Booking is null"); // unless we log this somewhere else
+        else {
+            log.error("Something went wrong. Booking is null");
+        }
         return null;
     }
 
     @Override
-    public void delete(int id) {
+    public Booking delete(int id) {
         Booking tmp = store.remove(id);
         if (tmp != null) {
             log.info("Booking with id: {} was removed", tmp.getId());
@@ -67,5 +69,6 @@ public class BookingRepository implements BookingStore {
         else {
             log.warn("Booking with id: {} not found in system", id);
         }
+        return tmp;
     }
 }
