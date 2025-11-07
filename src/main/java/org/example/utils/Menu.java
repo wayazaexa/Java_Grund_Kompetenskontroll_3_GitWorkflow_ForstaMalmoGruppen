@@ -36,7 +36,7 @@ public class Menu {
         /// printMenu is static method come from Menu class, there is utils.
         while (true) {
             try {
-                printMenu("Create booking", "Update booking", "Cancel booking", "Show bookings", "Show booking details", "Close app");
+                printMenu("Create booking", "Update booking", "Remove booking", "Show bookings", "Show booking details", "Close app");
                 System.out.print("Enter your choice: ");
                 var choice = scanner.nextLine().trim();
                 switch (choice) {
@@ -145,8 +145,17 @@ public class Menu {
     }
 
     private void deleteBooking() {
-        System.out.println("CancelBooking");
+        System.out.println("\nBookings:");
+        service.getAll().forEach(Booking::printShortInfo);
+        int choice = handleIntInput("Enter id of the booking you want to delete: ");
+        Booking tmp = service.delete(choice);
+        if (tmp == null) {
+            System.out.println("\nBooking was not found in the system");
+        } else {
+            System.out.println("\nBooking with id " + choice + " has been deleted.");
+        }
     }
+
 
     private void showBookings() {
         System.out.println("\nShow all bookings");
@@ -199,4 +208,6 @@ public class Menu {
             System.out.println(tmp);
         }
     }
+
+
 }

@@ -13,5 +13,6 @@ public interface BookingStore {
 
     Booking update(Booking obj);
 
-    void delete(int id);
+    Booking delete(int id);
+
 }
