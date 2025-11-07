@@ -12,7 +12,7 @@ public class Booking {
     private LocalDate date;
     private int price;
     private String email;
-    private BookingStatus isReady;
+    private BookingStatus status;
 
     public Booking(Vehicle vehicle, LocalDate date, String email) {
         if (vehicle == null) {
@@ -21,7 +21,7 @@ public class Booking {
         this.vehicle = vehicle;
         this.date = date;
         this.email = email;
-        this.isReady = BookingStatus.BOOKED;
+        this.status = BookingStatus.BOOKED;
         this.id = ++idGenerator;
     }
 
@@ -66,16 +66,16 @@ public class Booking {
         this.email = email;
     }
 
-    public BookingStatus isReady() {
-        return isReady;
+    public BookingStatus getStatus() {
+        return status;
     }
 
-    public void setReady(BookingStatus ready) {
-        isReady = ready;
+    public void setStatus(BookingStatus status) {
+        this.status = status;
     }
 
     public void printShortInfo() {
-        System.out.println("Booking - id: " + id + ", date: " + date + ", status: " + isReady);
+        System.out.println("Booking - id: " + id + ", date: " + date + ", status: " + status);
     }
 
     @Override
@@ -85,6 +85,6 @@ public class Booking {
                 ", date=" + date +
                 ", price=" + price +
                 ", email='" + email + '\'' +
-                ", isReady=" + isReady;
+                ", isReady=" + status;
     }
 }

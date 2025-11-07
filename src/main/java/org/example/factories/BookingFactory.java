@@ -18,4 +18,8 @@ public class BookingFactory {
             return null;
         }
     }
+
+    public Booking createBooking(Vehicle vehicle, LocalDate date, String email, String measure) {
+        return null;
+    }
 }
