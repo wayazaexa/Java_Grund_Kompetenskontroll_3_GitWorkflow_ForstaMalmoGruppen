@@ -1,5 +1,6 @@
 package org.example.utils;
 
+import org.example.entities.Booking;
 import org.example.entities.BookingType;
 import org.example.entities.Vehicle;
 import org.example.factories.*;
@@ -148,7 +149,7 @@ public class Menu {
 
     private void showBookings() {
         System.out.println("Show all bookings");
-        service.getAll().forEach(System.out::println);
+        service.getAll().forEach(Booking::printShortInfo);
     }
 
     private void showBookingDetails() {

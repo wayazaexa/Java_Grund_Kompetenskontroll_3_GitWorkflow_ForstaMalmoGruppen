@@ -3,7 +3,6 @@ package org.example.entities;
 import org.example.exceptions.InvalidVehicleException;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class Booking {
 
@@ -24,14 +23,6 @@ public class Booking {
         this.email = email;
         this.isReady = BookingStatus.BOOKED;
         this.id = ++idGenerator;
-    }
-
-    public static int getIdGenerator() {
-        return idGenerator;
-    }
-
-    public static void setIdGenerator(int idGenerator) {
-        Booking.idGenerator = idGenerator;
     }
 
     public int getId() {
@@ -81,6 +72,10 @@ public class Booking {
 
     public void setReady(BookingStatus ready) {
         isReady = ready;
+    }
+
+    public void printShortInfo() {
+        System.out.println("Booking - id: " + id + ", date: " + date + ", status: " + isReady);
     }
 
     @Override
