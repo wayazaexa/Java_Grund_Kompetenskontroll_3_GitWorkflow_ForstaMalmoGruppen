@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 public class RepairFactory extends BookingFactory {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
+    @Override
     public Booking createBooking(Vehicle vehicle, LocalDateTime date, String email, String measure) {
         try {
             return new Repair(vehicle, date, email, measure);
@@ -21,4 +22,3 @@ public class RepairFactory extends BookingFactory {
         }
     }
 }
-

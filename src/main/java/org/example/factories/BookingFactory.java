@@ -4,8 +4,6 @@ import org.example.entities.Booking;
 import org.example.entities.Vehicle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class BookingFactory {
@@ -20,7 +18,7 @@ public class BookingFactory {
         }
     }
 
-//    public Booking createBooking(Vehicle vehicle, LocalDate date, String email, String measure) {
-//        return null;
-//    }
+    public Booking createBooking(Vehicle vehicle, LocalDateTime date, String email, String measure) {
+        return null;
+    }
 }

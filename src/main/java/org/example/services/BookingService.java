@@ -1,26 +1,21 @@
 package org.example.services;
 
 import org.example.dto.BookingRepository;
-import org.example.entities.Booking;
-import org.example.entities.BookingStatus;
-import org.example.entities.BookingType;
-import org.example.entities.Vehicle;
+import org.example.entities.*;
 import org.example.factories.BookingFactory;
 import org.example.factories.RepairFactory;
 import org.example.factories.ServiceFactory;
 import org.example.factories.VehicleInspectionFactory;
 import org.example.store.BookingStore;
 import org.example.store.NotificationRepo;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class BookingService {
-    private final BookingRepository bookingStore;
+    private final BookingStore bookingStore;
     private final NotificationRepo notificationService;
 
-    public BookingService(BookingRepository bookingStore, NotificationRepo notificationService) {
+    public BookingService(BookingStore bookingStore, NotificationRepo notificationService) {
         this.bookingStore = bookingStore;
         this.notificationService = notificationService;
     }
@@ -53,17 +48,8 @@ public class BookingService {
         System.out.println("Booking has been created" + booking);
     }
 
-    public void update(Booking booking) {
-        Booking tmp = bookingStore.update(booking);
-        if (tmp == null) {
-            System.out.println("Booking could not be updated");
-        }
-        else {
-            System.out.println("Booking with id " + tmp.getId() + " was updated");
-
-            // send notification
-            notificationService.notifyBookingEvent(booking, BookingStatus.DONE);
-        }
+    public void update(Booking booking, BookingStatus bookingStatus) {
+        bookingStore.update(booking);
     }
 
     public Booking delete(int id) {
