@@ -7,12 +7,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class VehicleInspectionFactory extends BookingFactory {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Override
-    public Booking createBooking(Vehicle vehicle, LocalDate date, String email) {
+    public Booking createBooking(Vehicle vehicle, LocalDateTime date, String email) {
         try {
             return new VehicleInspection(vehicle, date, email);
         } catch (RuntimeException e) {

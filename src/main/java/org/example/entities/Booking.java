@@ -1,20 +1,22 @@
 package org.example.entities;
 
 import org.example.exceptions.InvalidVehicleException;
+import org.example.factories.ServiceFactory;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Booking {
 
     private static int idGenerator;
     private int id;
     private Vehicle vehicle;
-    private LocalDate date;
+    private LocalDateTime date;
     private int price;
     private String email;
     private BookingStatus status;
 
-    public Booking(Vehicle vehicle, LocalDate date, String email) {
+    public Booking(Vehicle vehicle, LocalDateTime date, String email) {
         if (vehicle == null) {
             throw new InvalidVehicleException("Vehicle was not created correctly");
         }
@@ -29,6 +31,10 @@ public class Booking {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Vehicle getVehicle() {
         return vehicle;
     }
@@ -37,11 +43,11 @@ public class Booking {
         this.vehicle = vehicle;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDateTime getDate() {
+       return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
@@ -70,16 +76,25 @@ public class Booking {
     }
 
     public void printShortInfo() {
-        System.out.println("Booking - id: " + id + ", date: " + date + ", status: " + status);
+        DateTimeFormatter nice = DateTimeFormatter.ofPattern("EEEE d MMMM yyyy 'kl.' HH:mm");
+        String formatted = date.format(nice);
+        System.out.println(
+                "Booking - id: " + id +
+                        " ,RegNr: " + vehicle.getRegNr() +
+                        ", date: " + formatted +
+                        " , status: " + status
+        );
     }
 
     @Override
     public String toString() {
+        DateTimeFormatter nice = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         return "id: " + id +
                 ", vehicle: [ " + vehicle + " ]" +
-                ", date: " + date +
+                ", date: " + date.format(nice) +
                 ", price: " + price +
                 ", email: '" + email + '\'' +
                 ", status: " + status;
     }
+
 }

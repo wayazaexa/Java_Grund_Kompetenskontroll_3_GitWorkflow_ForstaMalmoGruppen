@@ -1,10 +1,10 @@
 package org.example.entities;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Service extends Booking {
 
-    public Service(Vehicle vehicle, LocalDate date, String email) {
+    public Service(Vehicle vehicle, LocalDateTime date, String email) {
         super(vehicle, date, email);
         this.setPrice(calculatePrice(vehicle.getYear()));
     }

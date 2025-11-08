@@ -1,12 +1,13 @@
 package org.example.entities;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Repair extends Booking {
 
     private String measure;
 
-    public Repair(Vehicle vehicle, LocalDate date, String email, String measure) {
+    public Repair(Vehicle vehicle, LocalDateTime date, String email, String measure) {
         super(vehicle,date, email);
         this.measure = measure;
     }

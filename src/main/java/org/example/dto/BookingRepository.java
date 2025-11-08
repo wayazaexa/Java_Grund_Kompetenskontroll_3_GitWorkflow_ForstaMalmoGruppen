@@ -38,7 +38,6 @@ public class BookingRepository implements BookingStore {
     public void add(Booking booking) {
         if (booking != null) {
             store.put(booking.getId(), booking);
-            log.info("Booking has been added");
         }
     }
 
@@ -71,4 +70,7 @@ public class BookingRepository implements BookingStore {
         }
         return tmp;
     }
+
+
+
 }
