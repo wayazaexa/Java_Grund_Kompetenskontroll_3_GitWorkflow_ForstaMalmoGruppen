@@ -15,8 +15,8 @@ public class Booking {
     private int price;
     private String email;
     private BookingStatus status;
-
-    public Booking(Vehicle vehicle, LocalDateTime date, String email) {
+    private BookingType bookingType;
+    public Booking(Vehicle vehicle, LocalDateTime date, String email,BookingType bookingType) {
         if (vehicle == null) {
             throw new InvalidVehicleException("Vehicle was not created correctly");
         }
@@ -25,6 +25,16 @@ public class Booking {
         this.email = email;
         this.status = BookingStatus.BOOKED;
         this.id = ++idGenerator;
+        this.bookingType = bookingType;
+
+    }
+
+    public BookingType getBookingType() {
+        return bookingType;
+    }
+
+    public void setBookingType(BookingType bookingType) {
+        this.bookingType = bookingType;
     }
 
     public int getId() {
@@ -82,7 +92,9 @@ public class Booking {
                 "Booking - id: " + id +
                         " ,RegNr: " + vehicle.getRegNr() +
                         ", date: " + formatted +
-                        " , status: " + status
+                        " , status: " + status +
+                        ", price: " + price +
+                        ", bookingType: " + bookingType
         );
     }
 
@@ -94,7 +106,8 @@ public class Booking {
                 ", date: " + date.format(nice) +
                 ", price: " + price +
                 ", email: '" + email + '\'' +
-                ", status: " + status;
+                ", status: " + status +
+                ", Booking's type: " + bookingType;
     }
 
 }

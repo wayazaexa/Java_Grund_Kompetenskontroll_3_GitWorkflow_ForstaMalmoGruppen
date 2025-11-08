@@ -799,3 +799,71 @@
 2025-11-08 11:51:40.379 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
 2025-11-08 11:51:45.226 [main] WARN  [BookingRepository.java:29] - Booking with id: 2 not found in the system
 2025-11-08 11:51:49.915 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:02:00.641 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 12:02:00.647 [main] INFO  [InitializationService.java:29] - Populating store
+2025-11-08 12:02:02.446 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:02:40.803 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:02:40.805 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:04:22.920 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:05:13.548 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:05:13.550 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:07:40.219 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:07:40.223 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:07:46.240 [main] INFO  [BookingRepository.java:32] - Found booking with id: 8
+2025-11-08 12:07:46.247 [main] INFO  [BookingRepository.java:49] - Booking has been updated
+2025-11-08 12:11:49.757 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 12:11:49.775 [main] INFO  [InitializationService.java:29] - Populating store
+2025-11-08 12:11:53.083 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:12:25.748 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:12:25.749 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:12:29.791 [main] INFO  [BookingRepository.java:32] - Found booking with id: 7
+2025-11-08 12:12:29.795 [main] INFO  [BookingRepository.java:49] - Booking has been updated
+2025-11-08 12:32:50.871 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 12:32:50.885 [main] INFO  [InitializationService.java:29] - Populating store
+2025-11-08 12:32:58.897 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:33:22.756 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:33:22.757 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:33:26.670 [main] INFO  [BookingRepository.java:32] - Found booking with id: 7
+2025-11-08 12:33:26.675 [main] INFO  [BookingRepository.java:49] - Booking has been updated
+2025-11-08 12:34:20.105 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 12:34:20.113 [main] INFO  [InitializationService.java:29] - Populating store
+2025-11-08 12:34:22.145 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:36:35.785 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:36:39.800 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:36:43.848 [main] INFO  [BookingRepository.java:32] - Found booking with id: 7
+2025-11-08 12:36:43.856 [main] INFO  [BookingRepository.java:49] - Booking has been updated
+2025-11-08 12:38:38.557 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 12:38:38.573 [main] INFO  [InitializationService.java:29] - Populating store
+2025-11-08 12:38:40.059 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:45:49.365 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 12:45:49.376 [main] INFO  [InitializationService.java:30] - Populating store
+2025-11-08 12:45:53.134 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:46:18.564 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:46:18.564 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:55:41.792 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 12:55:41.798 [main] INFO  [InitializationService.java:29] - Populating store
+2025-11-08 12:55:44.627 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:56:20.748 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:56:20.748 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:56:28.810 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:56:28.811 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 12:56:44.034 [main] INFO  [BookingRepository.java:32] - Found booking with id: 7
+2025-11-08 12:56:44.037 [main] INFO  [BookingRepository.java:49] - Booking has been updated
+2025-11-08 12:58:11.660 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 12:58:11.668 [main] INFO  [InitializationService.java:29] - Populating store
+2025-11-08 12:58:14.112 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 13:04:37.599 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 13:04:37.615 [main] INFO  [InitializationService.java:29] - Populating store
+2025-11-08 13:04:42.397 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 13:06:04.540 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 13:06:04.549 [main] INFO  [InitializationService.java:29] - Populating store
+2025-11-08 13:06:08.321 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 13:09:53.225 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 13:09:53.236 [main] INFO  [InitializationService.java:30] - Populating store
+2025-11-08 13:09:55.864 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 13:10:24.621 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 13:10:24.622 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 13:10:27.947 [main] INFO  [BookingRepository.java:32] - Found booking with id: 7
+2025-11-08 13:10:34.049 [main] INFO  [BookingRepository.java:49] - Booking has been updated
+2025-11-08 13:10:43.568 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 13:10:43.569 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings

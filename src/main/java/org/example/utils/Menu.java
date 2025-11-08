@@ -361,18 +361,20 @@ public class Menu {
     private void markBookingAsDone() {
         System.out.println("\nBookings:");
         service.getAll().forEach(Booking::printShortInfo);
-        int choice = handleIntInput("Enter id of the booking that's done: ");
+        System.out.println("Enter id of the booking you want to mark as done: ");
+        int choice = safeInt(scanner);
 
         Booking tmp = service.findById(choice);
         if (tmp == null) {
             System.out.println("\nBooking was not found in the system");
         } else {
-            tmp.setStatus(BookingStatus.DONE);
-            if (tmp instanceof Repair) {
+            if (tmp.getBookingType() == BookingType.REPAIR) {
                 int cost = handleIntInput("Enter how much this repair costs: ");
                 tmp.setPrice(cost);
+                tmp.setStatus(BookingStatus.DONE);
             }
             service.update(tmp,tmp.getStatus());
+            notificationService.notifyBookingEvent(tmp, BookingStatus.DONE);
             System.out.println("\nBooking with id " + choice + " has been marked as done.");
         }
     }

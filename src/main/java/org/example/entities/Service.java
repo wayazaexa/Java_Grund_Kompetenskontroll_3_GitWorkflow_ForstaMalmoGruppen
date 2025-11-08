@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Service extends Booking {
 
     public Service(Vehicle vehicle, LocalDateTime date, String email) {
-        super(vehicle, date, email);
+        super(vehicle, date, email, BookingType.SERVICE);
         this.setPrice(calculatePrice(vehicle.getYear()));
     }
 

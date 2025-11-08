@@ -1,6 +1,5 @@
 package org.example.entities;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Repair extends Booking {
@@ -8,8 +7,9 @@ public class Repair extends Booking {
     private String measure;
 
     public Repair(Vehicle vehicle, LocalDateTime date, String email, String measure) {
-        super(vehicle,date, email);
+        super(vehicle,date, email, BookingType.REPAIR);
         this.measure = measure;
+        this.setBookingType(BookingType.REPAIR);
     }
 
     public String getMeasure() {
@@ -28,6 +28,6 @@ public class Repair extends Booking {
                 ", date: " + getDate() +
                 ", email: '" + getEmail() + '\'' +
                 ", status: " + getStatus() +
-                ", measure: '" + measure + '\'';
+                ", measure: '" + getMeasure() + '\'';
     }
 }
