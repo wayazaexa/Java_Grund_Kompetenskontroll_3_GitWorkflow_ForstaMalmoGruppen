@@ -3,6 +3,7 @@ package org.example.services;
 import org.example.dto.BookingRepository;
 import org.example.entities.Booking;
 import org.example.entities.BookingStatus;
+import org.example.entities.BookingType;
 import org.example.entities.Service;
 import org.example.factories.RepairFactory;
 import org.example.factories.ServiceFactory;
@@ -30,22 +31,22 @@ public class InitializationService {
         Booking tmp = vehicleInspectionFactory.createBooking(
                 vehicleFactory.createVehicle("ABC123", "VW Golf", 2005),
                 LocalDateTime.of(2025, 12, 6, 9, 0),
-                "kalle@mail.com");
+                "kalle@mail.com",BookingType.INSPECTION);
         tmp.setStatus(BookingStatus.CANCELLED);
         store.add(tmp);
 
         store.add(vehicleInspectionFactory.createBooking(
                 vehicleFactory.createVehicle("DEF456", "Toyota Corolla", 1991),
                 LocalDateTime.of(2025, 1, 5,10,0),
-                "jocke@mail.com"));
+                "jocke@mail.com",BookingType.INSPECTION));
         store.add(vehicleInspectionFactory.createBooking(
                 vehicleFactory.createVehicle("GHI78J", "Volvo 142", 1972),
                 LocalDateTime.of(2025,6 , 8,11,0),
-                "pelle@mail.com"));
+                "pelle@mail.com",BookingType.INSPECTION));
         tmp = serviceFactory.createBooking(
                 vehicleFactory.createVehicle("HFR21F", "Toyota Rav4", 2022),
                 LocalDateTime.of(2026,12, 2,12,0),
-                "david.davido@gmail.com");
+                "david.davido@gmail.com", BookingType.SERVICE);
         tmp.setStatus(BookingStatus.CONFIRMED);
         store.add(tmp);
         store.add(repairFactory.createBooking(

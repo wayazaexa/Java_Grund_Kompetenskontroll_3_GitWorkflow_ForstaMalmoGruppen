@@ -1,6 +1,7 @@
 package org.example.factories;
 
 import org.example.entities.Booking;
+import org.example.entities.BookingType;
 import org.example.entities.Service;
 import org.example.entities.Vehicle;
 import org.slf4j.Logger;
@@ -13,7 +14,7 @@ public class ServiceFactory extends BookingFactory {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Override
-    public Booking createBooking(Vehicle vehicle, LocalDateTime date, String email) {
+    public Booking createBooking(Vehicle vehicle, LocalDateTime date, String email, BookingType bookingType) {
         try {
             return new Service(vehicle, date, email);
         } catch (RuntimeException e) {

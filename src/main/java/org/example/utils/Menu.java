@@ -50,14 +50,30 @@ public class Menu {
                 printMenu("Create booking", "Update booking", "Remove booking", "Confirm booking as done", "Show bookings", "Show booking details", "Close app");
                 System.out.print("Enter your choice: ");
                 var choice = scanner.nextLine().trim();
+                var bookings = service.getAll();
+
                 switch (choice) {
                     case "1" -> createBooking();
-                    case "2" -> updateBooking(scanner);
-                    case "3" -> deleteBooking();
-                    case "4" -> markBookingAsDone();
-                    case "5" -> showBookings();
-                    case "6" -> showBookingDetails();
-                    case "7" -> { return; }
+
+                    case "2", "3", "4", "5", "6" -> {
+                        if (bookings == null || bookings.isEmpty()) {
+                            System.out.println("list is empty");
+                        } else {
+                            // now branch per choice
+                            switch (choice) {
+                                case "2" -> updateBooking(scanner);
+                                case "3" -> deleteBooking();
+                                case "4" -> markBookingAsDone();
+                                case "5" -> showBookings();
+                                case "6" -> showBookingDetails();
+                            }
+                        }
+                    }
+
+                    case "7" -> {
+                        return;
+                    }
+
                     default -> System.out.println("Invalid choice");
                 }
 
@@ -345,18 +361,20 @@ public class Menu {
     private void markBookingAsDone() {
         System.out.println("\nBookings:");
         service.getAll().forEach(Booking::printShortInfo);
-        int choice = handleIntInput("Enter id of the booking that's done: ");
+        System.out.println("Enter id of the booking you want to mark as done: ");
+        int choice = safeInt(scanner);
 
         Booking tmp = service.findById(choice);
         if (tmp == null) {
             System.out.println("\nBooking was not found in the system");
         } else {
-            tmp.setStatus(BookingStatus.DONE);
-            if (tmp instanceof Repair) {
+            if (tmp.getBookingType() == BookingType.REPAIR) {
                 int cost = handleIntInput("Enter how much this repair costs: ");
                 tmp.setPrice(cost);
+                tmp.setStatus(BookingStatus.DONE);
             }
             service.update(tmp,tmp.getStatus());
+            notificationService.notifyBookingEvent(tmp, BookingStatus.DONE);
             System.out.println("\nBooking with id " + choice + " has been marked as done.");
         }
     }
