@@ -794,3 +794,8 @@
 2025-11-08 01:12:05.881 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
 2025-11-08 01:12:23.985 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
 2025-11-08 01:12:31.967 [main] INFO  [BookingRepository.java:32] - Found booking with id: 7
+2025-11-08 11:51:32.986 [main] INFO  [App.java:19] - Booking app started
+2025-11-08 11:51:32.994 [main] INFO  [InitializationService.java:29] - Populating store
+2025-11-08 11:51:40.379 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings
+2025-11-08 11:51:45.226 [main] WARN  [BookingRepository.java:29] - Booking with id: 2 not found in the system
+2025-11-08 11:51:49.915 [main] INFO  [BookingRepository.java:21] - Returned a list of all current bookings

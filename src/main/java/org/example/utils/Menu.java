@@ -50,14 +50,30 @@ public class Menu {
                 printMenu("Create booking", "Update booking", "Remove booking", "Confirm booking as done", "Show bookings", "Show booking details", "Close app");
                 System.out.print("Enter your choice: ");
                 var choice = scanner.nextLine().trim();
+                var bookings = service.getAll();
+
                 switch (choice) {
                     case "1" -> createBooking();
-                    case "2" -> updateBooking(scanner);
-                    case "3" -> deleteBooking();
-                    case "4" -> markBookingAsDone();
-                    case "5" -> showBookings();
-                    case "6" -> showBookingDetails();
-                    case "7" -> { return; }
+
+                    case "2", "3", "4", "5", "6" -> {
+                        if (bookings == null || bookings.isEmpty()) {
+                            System.out.println("list is empty");
+                        } else {
+                            // now branch per choice
+                            switch (choice) {
+                                case "2" -> updateBooking(scanner);
+                                case "3" -> deleteBooking();
+                                case "4" -> markBookingAsDone();
+                                case "5" -> showBookings();
+                                case "6" -> showBookingDetails();
+                            }
+                        }
+                    }
+
+                    case "7" -> {
+                        return;
+                    }
+
                     default -> System.out.println("Invalid choice");
                 }
 
